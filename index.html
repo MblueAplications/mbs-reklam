@@ -3,224 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mblue Game | Official Corporate Hub</title>
-    <!-- Google Fonts & FontAwesome -->
+    <title>Mblue Game | Official Cyber Corporate Hub</title>
+    <!-- Göz Alıcı Fütüristik Yazı Fontları -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Orbitron:wght@500;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
         :root {
-            --bg-main: #050814;
-            --bg-surface: rgba(13, 20, 41, 0.6);
-            --bg-card: rgba(22, 33, 67, 0.4);
+            --bg-deep: #03000a;
+            --bg-glass: rgba(14, 11, 26, 0.65);
+            --bg-card: rgba(26, 21, 48, 0.4);
+            --neon-pink: #ff0055;
             --neon-cyan: #00f0ff;
-            --neon-blue: #0072ff;
+            --neon-purple: #9d4edd;
             --text-pure: #ffffff;
-            --text-body: #a0aec0;
-            --glass-border: rgba(0, 240, 255, 0.15);
+            --text-muted: #b3b0cb;
+            --border-glow: rgba(0, 240, 255, 0.2);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-main); color: var(--text-pure); line-height: 1.7; overflow-x: hidden; }
-
-        /* Arka Plan Efekti */
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, #002244 0%, transparent 50%), radial-gradient(circle at 10% 80%, #001122 0%, transparent 40%); z-index: -1; }
-
-        /* Modern Navigasyon */
-        header { background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 2px; color: var(--text-pure); text-shadow: 0 0 10px rgba(0,240,255,0.3); }
-        .logo span { color: var(--neon-cyan); }
-        nav a { color: var(--text-body); text-decoration: none; margin-left: 30px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
-        nav a:hover { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
-
-        /* Ortak Bölüm Tasarımları */
-        section { padding: 100px 8%; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-family: 'Orbitron', sans-serif; font-size: 36px; text-align: center; margin-bottom: 50px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
-        .section-title span { color: var(--neon-cyan); text-shadow: 0 0 15px rgba(0,240,255,0.5); }
-
-        /* Hero Tanıtım Alanı */
-        .hero { text-align: center; padding: 150px 8% 100px 8%; position: relative; }
-        .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 56px; font-weight: 800; letter-spacing: 3px; margin-bottom: 15px; background: linear-gradient(135deg, #fff 30%, var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero h2 { font-size: 16px; color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 35px; font-weight: 700; }
-        .hero p { max-width: 750px; margin: 0 auto 40px auto; font-size: 17px; color: var(--text-body); }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Rajdhani', sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-pure); line-height: 1.6; overflow-x: hidden; font-size: 18px; }
         
-        .btn-instagram { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #10172a, #020617); border: 1px solid var(--glass-border); color: white; padding: 14px 35px; text-decoration: none; border-radius: 8px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 13px; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .btn-instagram:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0,240,255,0.3); transform: translateY(-2px); }
-        .btn-instagram i { color: var(--neon-cyan); }
+        /* Hareketli ve Derin Premium Arka Plan Efekti */
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 80% 20%, #240046 0%, transparent 50%), radial-gradient(circle at 10% 80%, #03001e 0%, transparent 40%); z-index: -2; }
+        body::after { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(18, 10, 36, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 10, 36, 0.4) 1px, transparent 1px); background-size: 30px 30px; z-index: -1; opacity: 0.5; }
 
-        /* MBStress Oyun Alanı (Premium Kart) */
-        .game-card { background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 50px; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.4); position: relative; }
-        .game-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 24px; background: linear-gradient(45deg, transparent 60%, rgba(0,240,255,0.05)); pointer-events: none; }
-        .game-card h3 { font-family: 'Orbitron', sans-serif; font-size: 30px; color: var(--neon-cyan); margin-bottom: 20px; font-weight: 800; letter-spacing: 1px; }
-        .game-card p { color: var(--text-body); margin-bottom: 40px; font-size: 16px; text-align: justify; }
+        /* Premium Navigasyon Üst Menü */
+        header { background: rgba(3, 0, 10, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 240, 255, 0.1); box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: 3px; color: var(--text-pure); text-shadow: 0 0 15px rgba(0,240,255,0.4); }
+        .logo span { color: var(--neon-cyan); background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        nav a { color: var(--text-muted); text-decoration: none; margin-left: 35px; font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
+        nav a:hover, nav a.active { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
+        nav a.active::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); }
+
+        section { padding: 120px 8%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-family: 'Orbitron', sans-serif; font-size: 42px; text-align: center; margin-bottom: 60px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
+        .section-title span { color: var(--neon-cyan); text-shadow: 0 0 20px rgba(0,240,255,0.6); }
+
+        /* Göz Alıcı Hero Alanı */
+        .hero { text-align: center; padding: 16px0px 8% 100px 8%; }
+        .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 68px; font-weight: 900; letter-spacing: 4px; margin-bottom: 20px; background: linear-gradient(135deg, #fff 40%, var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0,240,255,0.2); }
+        .hero h2 { font-size: 20px; color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 6px; margin-bottom: 40px; font-weight: 700; text-shadow: 0 0 10px rgba(0,240,255,0.4); }
+        .hero p { max-width: 800px; margin: 0 auto 50px auto; font-size: 22px; color: var(--text-muted); font-weight: 500; }
         
-        /* Ekran Görüntüleri Klasik Yatay Galeri */
-        .game-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 45px; }
-        .game-gallery img { width: 100%; height: auto; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); filter: brightness(0.9); }
-        .game-gallery img:hover { transform: scale(1.05) translateY(-5px); border-color: var(--neon-cyan); filter: brightness(1.1); box-shadow: 0 10px 25px rgba(0,240,255,0.25); }
+        .btn-instagram { display: inline-flex; align-items: center; gap: 12px; background: rgba(255, 0, 85, 0.1); border: 1px solid var(--neon-pink); color: white; padding: 15px 40px; text-decoration: none; border-radius: 4px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 15px; transition: all 0.3s ease; box-shadow: 0 0 15px rgba(255,0,85,0.2); }
+        .btn-instagram:hover { background: var(--neon-pink); box-shadow: 0 0 30px rgba(255,0,85,0.6); transform: translateY(-3px); }
 
-        /* Mağaza Butonları */
+        /* Oyun Kartı */
+        .game-card { background: var(--bg-glass); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-radius: 16px; padding: 60px 40px; border: 1px solid var(--border-glow); box-shadow: 0 25px 60px rgba(0,0,0,0.6); position: relative; }
+        .game-card h3 { font-family: 'Orbitron', sans-serif; font-size: 36px; color: var(--neon-cyan); margin-bottom: 25px; font-weight: 900; letter-spacing: 1px; text-shadow: 0 0 10px rgba(0,240,255,0.3); }
+        .game-card p { color: var(--text-muted); margin-bottom: 50px; font-size: 20px; text-align: justify; font-weight: 500; }
+        
+        /* Ekran Görüntüleri Galerisi */
+        .game-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 50px; }
+        .game-gallery img { width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); filter: brightness(0.85) contrast(1.1); }
+        .game-gallery img:hover { transform: scale(1.06) translateY(-5px); border-color: var(--neon-cyan); filter: brightness(1.1); box-shadow: 0 15px 35px rgba(0,240,255,0.4); }
+
+        /* Oyun Mağaza Butonları */
         .store-buttons { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-        .store-btn { display: inline-flex; align-items: center; gap: 12px; padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: 700; color: white; transition: all 0.3s ease; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .store-btn.playstore { background-color: #1e293b; border: 1px solid rgba(255,255,255,0.1); opacity: 0.5; cursor: not-allowed; }
-        .store-btn.palmstore { background: linear-gradient(135deg, #ff6b00, #ff8800); box-shadow: 0 4px 15px rgba(255,107,0,0.3); }
-        .store-btn.palmstore:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(255,107,0,0.5); }
-        .store-btn.amazon { background: linear-gradient(135deg, #333, #111); border: 1px solid #ff9900; color: #ff9900; }
-        .store-btn.amazon:hover { background: #ff9900; color: #111; transform: translateY(-2px); box-shadow: 0 6px 25px rgba(255,153,0,0.4); }
+        .store-btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 40px; border-radius: 4px; text-decoration: none; font-weight: 700; color: white; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+        .store-btn.playstore { background-color: #161224; border: 1px solid rgba(255,255,255,0.05); opacity: 0.4; cursor: not-allowed; }
+        .store-btn.palmstore { background: rgba(255, 107, 0, 0.1); border: 1px solid #ff6b00; color: #ff6b00; box-shadow: 0 0 15px rgba(255,107,0,0.15); }
+        .store-btn.palmstore:hover { background: #ff6b00; color: white; transform: translateY(-3px); box-shadow: 0 0 30px rgba(255,107,0,0.5); }
+        .store-btn.amazon { background: rgba(0, 240, 255, 0.05); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); box-shadow: 0 0 15px rgba(0,240,255,0.15); }
+        .store-btn.amazon:hover { background: var(--neon-cyan); color: #03000a; transform: translateY(-3px); box-shadow: 0 0 30px rgba(0,240,255,0.5); }
 
-        /* Kurumsal Detay Blokları (About & Privacy) */
-        .content-block { background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 45px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
-        .content-block h3 { font-family: 'Orbitron', sans-serif; color: var(--neon-cyan); margin-top: 35px; margin-bottom: 15px; font-size: 20px; font-weight: 500; letter-spacing: 1px; }
-        .content-block h3:first-of-type { margin-top: 0; }
-        .content-block p { color: var(--text-body); font-size: 15px; margin-bottom: 25px; text-align: justify; }
-        .content-block ul { color: var(--text-body); font-size: 15px; margin-bottom: 25px; padding-left: 20px; }
-        .content-block li { margin-bottom: 12px; }
-        .content-block a { color: var(--neon-cyan); text-decoration: none; transition: opacity 0.3s; }
-        .content-block a:hover { opacity: 0.8; text-decoration: underline; }
+        /* İletişim Alanları */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .contact-box { background: var(--bg-card); padding: 40px 25px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.02); border-top: 3px solid var(--neon-purple); transition: all 0.3s ease; }
+        .contact-box:hover { border-top-color: var(--neon-cyan); transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,240,255,0.15); border-right: 1px solid rgba(0,240,255,0.1); }
+        .contact-box i { font-size: 36px; color: var(--neon-cyan); margin-bottom: 20px; text-shadow: 0 0 15px rgba(0,240,255,0.4); }
+        .contact-box h4 { margin-bottom: 12px; font-size: 22px; font-weight: 700; font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+        .contact-box a { color: var(--text-muted); text-decoration: none; font-size: 16px; word-break: break-all; font-weight: 700; transition: color 0.3s; }
+        .contact-box a:hover { color: var(--neon-cyan); text-shadow: 0 0 5px var(--neon-cyan); }
 
-        /* İletişim Kartları */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .contact-box { background: var(--bg-card); padding: 35px 20px; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.03); border-top: 3px solid var(--neon-blue); transition: all 0.3s ease; }
-        .contact-box:hover { border-top-color: var(--neon-cyan); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,114,255,0.15); }
-        .contact-box i { font-size: 32px; color: var(--neon-cyan); margin-bottom: 20px; text-shadow: 0 0 10px rgba(0,240,255,0.3); }
-        .contact-box h4 { margin-bottom: 12px; font-size: 18px; font-weight: 700; font-family: 'Orbitron', sans-serif; letter-spacing: 0.5px; }
-        .contact-box a { color: var(--text-body); text-decoration: none; transition: color 0.3s; font-size: 14px; word-break: break-all; font-weight: 500; }
-        .contact-box a:hover { color: var(--neon-cyan); }
-
-        /* Profesyonel Footer */
-        footer { background: #02040a; text-align: center; padding: 40px; font-size: 13px; color: var(--text-body); border-top: 1px solid rgba(255,255,255,0.05); letter-spacing: 0.5px; }
-        footer span { color: var(--text-pure); font-weight: 600; }
+        footer { background: #010003; text-align: center; padding: 45px; font-size: 15px; color: var(--text-muted); border-top: 1px solid rgba(0, 240, 255, 0.1); letter-spacing: 1px; }
+        footer span { color: var(--text-pure); font-weight: 700; }
     </style>
 </head>
 <body>
 
-    <!-- ÜST MENÜ -->
     <header>
         <div class="logo">MBLUE<span>GAME</span></div>
         <nav>
-            <a href="#anasayfa">Home</a>
-            <a href="#oyunlar">Games</a>
-            <a href="#about">About</a>
-            <a href="#privacy">Privacy</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy</a>
         </nav>
     </header>
 
-    <!-- HERO BAŞLANGIÇ ALANI -->
-    <section class="hero" id="anasayfa">
+    <section class="hero">
         <h1>MBLUEGAME APPLICATIONS</h1>
         <h2>Innovative Mobile Gaming Studio</h2>
-        <p>At MBlueGame Applications, led by Onur Uslu, we are dedicated to engineering immersive and high-performance mobile games that deliver exceptional entertainment to players worldwide. Our studio is built on the core pillars of artistic creativity, uncompromising quality, and a superior user-centric experience.</p>
-        
+        <p>At MBlueGame Applications, led by Onur Uslu, we are dedicated to engineering immersive and high-performance mobile games that deliver exceptional entertainment to players worldwide.</p>
         <a href="https://instagram.com/mbluegame" target="_blank" class="btn-instagram">
             <i class="fa-brands fa-instagram"></i> Instagram Hub
         </a>
     </section>
 
-    <!-- OYUN KARTI VE EKRAN GÖRÜNTÜLERİ -->
-    <section id="oyunlar">
+    <section style="padding-top:0;">
         <h2 class="section-title">Our <span>Games</span></h2>
         <div class="game-card">
             <h3>MBStress: Boss Rush</h3>
-            <p>MBStress: Boss Rush invites players to test their reflexes and strategic thinking skills. Survive against massive boss characters, each with its own unique mechanics. Every battle offers a distinct experience that requires patience and perfect timing. Enjoy the competition while relieving stress with simple graphics and fluid gameplay. Play Store, Palm Store and Amazon Appstore!!</p>
+            <p>MBStress: Boss Rush invites players to test their reflexes and strategic thinking skills. Survive against massive boss characters, each with its own unique mechanics. Every battle offers a distinct experience that requires patience and perfect timing. Enjoy the competition while relieving stress with simple graphics and fluid gameplay.</p>
             
-            <!-- Resimlerin Asla Kırılmayacağı Yerel Galeri Düzeni -->
             <div class="game-gallery">
-                <img src="./1.png" alt="MBStress Gameplay 1">
-                <img src="./4.png" alt="MBStress Gameplay 2">
-                <img src="./5.png" alt="MBStress Gameplay 3">
-                <img src="./6.png" alt="MBStress Gameplay 4">
-                <img src="./7.png" alt="MBStress Gameplay 5">
-                <img src="./8.png" alt="MBStress Gameplay 6">
+                <img src="./1.png" alt="Gameplay 1">
+                <img src="./4.png" alt="Gameplay 2">
+                <img src="./5.png" alt="Gameplay 3">
+                <img src="./6.png" alt="Gameplay 4">
+                <img src="./7.png" alt="Gameplay 5">
+                <img src="./8.png" alt="Gameplay 6">
             </div>
 
             <div class="store-buttons">
-                <a href="#" class="store-btn playstore" onclick="return false;">
-                    <i class="fa-brands fa-google-play"></i> Google Play
-                </a>
-                <a href="https://palmplaystore.com/detail/com.onur.mbs_vfinal_yeni" target="_blank" class="store-btn palmstore">
-                    <i class="fa-solid fa-gamepad"></i> Palm Store
-                </a>
-                <a href="https://https://www.amazon.com/gp/product/B0GZW1LKVN" target="_blank" class="store-btn amazon">
-                    <i class="fa-brands fa-amazon"></i> Amazon Store
-                </a>
+                <a href="#" class="store-btn playstore" onclick="return false;"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                <a href="https://www.palmplaystore.com/detail/com.onur.mbs_vfinal_yeni" target="_blank" class="store-btn palmstore"><i class="fa-solid fa-gamepad"></i> Palm Store</a>
+                <a href="https://www.amazon.com/gp/product/B0GZW1LKVN" target="_blank" class="store-btn amazon"><i class="fa-brands fa-amazon"></i> Amazon Store</a>
             </div>
         </div>
     </section>
 
-    <!-- HAKKIMIZDA (ABOUT US) -->
-    <section id="about">
-        <h2 class="section-title">Studio <span>Profile</span></h2>
-        <div class="content-block">
-            <h3>Who We Are</h3>
-            <p>MBlueGame Applications is a premier mobile game development studio dedicated to crafting engaging and innovative digital experiences for a global audience. Led by founder and lead developer Onur Uslu, our studio is built on a foundation of technical excellence and a deep-seated passion for the interactive entertainment industry. We specialize in delivering high-fidelity graphics, seamless gameplay mechanics, and intuitive, user-centric designs.</p>
-            
-            <h3>Our Mission</h3>
-            <p>Our mission is to redefine mobile entertainment by developing titles that transcend traditional gaming. From intense arcade challenges to immersive strategic adventures, MBlueGame Applications is committed to uncompromising quality in every pixel. We strive to create lasting impressions through rewarding gameplay and consistent innovation.</p>
-            
-            <h3>Global Distribution</h3>
-            <p>We combine advanced technical expertise with boundless artistic creativity to bring unique concepts to life. Our portfolio is proudly featured across major global mobile ecosystems, including Google Play Store, Amazon Appstore, and Palm Store (Transsion). We are constantly evolving to lead and expand our presence in the international gaming market.</p>
-            
-            <h3>Legal Ownership</h3>
-            <p>MBlueGame Applications is a professional development studio. All operations, intellectual properties, and digital assets are exclusively owned and managed by Onur Uslu.</p>
-        </div>
-    </section>
-
-    <!-- GİZLİLİK POLİTİKASI (PRIVACY POLICY) -->
-    <section id="privacy">
-        <h2 class="section-title">Legal & <span>Privacy</span></h2>
-        <div class="content-block">
-            <p>This privacy policy applies to the MBStress: Boss Rush app (hereinafter referred to as "Application") for mobile devices. The Application was developed by Onur Uslu under the brand MBlueGame Applications (hereinafter referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
-            
-            <h3>Information Collection and Use</h3>
-            <p>The Application collects information when you download and use it. This information may include:</p>
-            <ul>
-                <li>Your device's Internet Protocol address (e.g., IP address)</li>
-                <li>The pages of the Application that you visit, the time and date of your visit, and the time spent on those pages</li>
-                <li>The total time spent on the Application</li>
-                <li>The operating system used on your mobile device</li>
-            </ul>
-            <p>The Application does not collect precise information about the location of your mobile device.</p>
-            <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
-            <p>The Service Provider may use the information you provided to contact you from time to time to provide you with important information, required notices, and marketing promotions.</p>
-            <p>For a better experience, while using the Application, the Service Provider may require you to provide certain personally identifiable information. The information that the Service Provider requests will be retained and used as described in this privacy policy.</p>
-
-            <h3>Third Party Access</h3>
-            <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways described in this privacy statement.</p>
-            <p>The Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the privacy policies of the third-party service providers used by the Application:</p>
-            <ul>
-                <li><a href="https://google.com" target="_blank">Google Play Services</a></li>
-                <li><a href="https://palmplaystore.com" target="_blank">Palm Store</a></li>
-                <li><a href="https://amazon.com" target="_blank">Amazon Appstore</a></li>
-                <li><a href="https://google.com" target="_blank">AdMob</a></li>
-                <li><a href="https://inmobi.com" target="_blank">Inmobi</a></li>
-            </ul>
-
-            <h3>Opt-out Rights</h3>
-            <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall processes available as part of your mobile device or via the mobile application marketplace or network.</p>
-
-            <h3>Data Retention Policy</h3>
-            <p>The Service Provider (Onur Uslu) will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. If you’d like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>.</p>
-
-            <h3>Children</h3>
-            <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13. The Application does not address anyone under the age of 13. If the Service Provider discovers that a child under 13 has provided personal information, they will immediately delete this from their servers.</p>
-
-            <h3>Security</h3>
-            <p>The Service Provider is concerned about safeguarding the confidentiality of your information. Physical, electronic, and procedural safeguards are provided to protect the information processed and maintained.</p>
-
-            <h3>Changes</h3>
-            <p>This Privacy Policy may be updated from time to time. The Service Provider will notify you of any changes by updating this page with the new Privacy Policy. This policy is effective as of 2026-05-09.</p>
-
-            <h3>Contact Us</h3>
-            <p>If you have any questions regarding privacy while using the Application, please contact Onur Uslu via email at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>, <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a> and <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a>.</p>
-        </div>
-    </section>
-
-    <!-- İLETİŞİM ALANI -->
-    <section id="contact">
+    <section style="background: rgba(14, 11, 26, 0.3);">
         <h2 class="section-title">Corporate <span>Relations</span></h2>
         <div class="contact-grid">
             <div class="contact-box">
@@ -230,7 +136,7 @@
             </div>
             <div class="contact-box">
                 <i class="fa-solid fa-envelope"></i>
-                <h4>Direct Communication</h4>
+                <h4>Direct Contact</h4>
                 <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>
             </div>
             <div class="contact-box">
@@ -241,9 +147,8 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <p>© 2024 <span>Mblue Game - Onur Uslu</span>. All rights reserved. Managed globally by Onur Uslu.</p>
+        <p>© 2024 <span>Mblue Game - Onur Uslu</span>. All rights reserved.</p>
     </footer>
 
 </body>
