@@ -12,22 +12,28 @@
     
     <style>
         :root {
-            --bg-main: #050814;
-            --bg-surface: rgba(13, 20, 41, 0.6);
-            --bg-card: rgba(22, 33, 67, 0.4);
+            --bg-surface: rgba(5, 8, 20, 0.75);
+            --bg-card: rgba(13, 20, 41, 0.55);
             --neon-cyan: #00f0ff;
             --neon-blue: #0072ff;
             --text-pure: #ffffff;
-            --text-body: #a0aec0;
-            --glass-border: rgba(0, 240, 255, 0.15);
+            --text-body: #cbd5e1;
+            --glass-border: rgba(0, 240, 255, 0.25);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-main); color: var(--text-pure); line-height: 1.7; overflow-x: hidden; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, #002244 0%, transparent 50%), radial-gradient(circle at 10% 80%, #001122 0%, transparent 40%); z-index: -1; }
+        
+        /* Dinamik Arka Plan Düzenlemesi (arkaplan.avif) */
+        body { 
+            background: linear-gradient(rgba(5, 8, 20, 0.65), rgba(5, 8, 20, 0.85)), url('./arkaplan.avif') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-pure); 
+            line-height: 1.7; 
+            overflow-x: hidden; 
+        }
 
-        header { background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        header { background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0,240,255,0.15); }
         .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 2px; color: var(--text-pure); text-shadow: 0 0 10px rgba(0,240,255,0.3); }
         .logo span { color: var(--neon-cyan); }
         
@@ -35,7 +41,7 @@
         nav a { color: var(--text-body); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; margin-left: 20px; }
         nav a:hover, nav a.active { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
 
-        .lang-switcher { display: flex; gap: 8px; border: 1px solid var(--glass-border); padding: 4px; border-radius: 6px; background: rgba(0,0,0,0.3); }
+        .lang-switcher { display: flex; gap: 8px; border: 1px solid var(--glass-border); padding: 4px; border-radius: 6px; background: rgba(0,0,0,0.5); }
         .lang-btn { background: transparent; border: none; color: var(--text-body); padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
         .lang-btn:hover { color: var(--text-pure); }
         .lang-btn.active { background: var(--neon-cyan); color: #000; box-shadow: 0 0 10px rgba(0,240,255,0.4); }
@@ -44,7 +50,7 @@
         .section-title { font-family: 'Orbitron', sans-serif; font-size: 36px; text-align: center; margin-bottom: 50px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
         .section-title span { color: var(--neon-cyan); text-shadow: 0 0 15px rgba(0,240,255,0.5); }
 
-        .hero { text-align: center; padding: 150px 8% 100px 8%; position: relative; }
+        .hero { text-align: center; padding: 150px 8% 100px 8%; position: relative; background: rgba(5, 8, 20, 0.4); border-radius: 24px; backdrop-filter: blur(4px); margin-top: 40px; border: 1px solid rgba(255,255,255,0.03); }
         .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 56px; font-weight: 800; letter-spacing: 3px; margin-bottom: 15px; background: linear-gradient(135deg, #fff 30%, var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero h2 { font-size: 16px; color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 35px; font-weight: 700; }
         .hero p { max-width: 750px; margin: 0 auto 40px auto; font-size: 17px; color: var(--text-body); }
@@ -53,7 +59,7 @@
         .btn-instagram:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0,240,255,0.3); transform: translateY(-2px); }
         .btn-instagram i { color: var(--neon-cyan); }
 
-        .game-card { background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 50px; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.4); position: relative; }
+        .game-card { background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 50px; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.5); position: relative; }
         .game-card h3 { font-family: 'Orbitron', sans-serif; font-size: 30px; color: var(--neon-cyan); margin-bottom: 20px; font-weight: 800; letter-spacing: 1px; }
         .game-card p { color: var(--text-body); margin-bottom: 40px; font-size: 16px; text-align: justify; }
         
@@ -77,8 +83,6 @@
         .contact-box a { color: var(--text-body); text-decoration: none; transition: color 0.3s; font-size: 14px; word-break: break-all; font-weight: 500; }
         .contact-box a:hover { color: var(--neon-cyan); }
 
-        .lang-text { display: none; }
-        .lang-text.active-text { display: inline; }
         .lang-p { display: none; }
         .lang-p.active-text { display: block; }
 
@@ -110,12 +114,12 @@
         <p id="hero-desc-en" class="lang-p active-text">At MBlueGame Applications, led by Onur Uslu, we are dedicated to engineering immersive and high-performance mobile games that deliver exceptional entertainment to players worldwide. Our studio is built on the core pillars of artistic creativity, uncompromising quality, and a superior user-centric experience.</p>
         <p id="hero-desc-tr" class="lang-p">Onur Uslu liderliğindeki MBlueGame Applications olarak, dünya çapındaki oyunculara olağanüstü eğlence sunan, yüksek performanslı ve sürükleyici mobil oyunlar geliştirmeye kendimizi adadık. Stüdyomuz; sanatsal yaratıcılık, tavizsiz kalite ve üstün kullanıcı odaklı deneyim temel taşları üzerine kurulmuştur.</p>
         
-        <a href="https://instagram.com/mbluegame" target="_blank" class="btn-instagram">
+        <a href="https://instagram.com" target="_blank" class="btn-instagram">
             <i class="fa-brands fa-instagram"></i> <span id="insta-text">Instagram Hub</span>
         </a>
     </section>
 
-    <section id="oyunlar">
+    <section id="oyunlar" style="padding-top:0;">
         <h2 class="section-title" id="sec-title-games">Our <span>Games</span></h2>
         <div class="game-card">
             <h3>MBStress: Boss Rush</h3>
@@ -134,8 +138,8 @@
 
             <div class="store-buttons">
                 <a href="#" class="store-btn playstore" onclick="return false;"><i class="fa-brands fa-google-play"></i> <span id="btn-play">Google Play</span></a>
-                <a href="https://www.palmplaystore.com/detail/com.onur.mbs_vfinal_yeni" target="_blank" class="store-btn palmstore"><i class="fa-solid fa-gamepad"></i> Palm Store</a>
-                <a href="https://www.amazon.com/gp/product/B0GZW1LKVN" target="_blank" class="store-btn amazon"><i class="fa-brands fa-amazon"></i> Amazon Store</a>
+                <a href="https://palmplaystore.com" target="_blank" class="store-btn palmstore"><i class="fa-solid fa-gamepad"></i> Palm Store</a>
+                <a href="https://amazon.com" target="_blank" class="store-btn amazon"><i class="fa-brands fa-amazon"></i> Amazon Store</a>
             </div>
         </div>
     </section>
@@ -169,7 +173,6 @@
         function switchLanguage(lang) {
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-
             document.querySelectorAll('.lang-p').forEach(p => p.classList.remove('active-text'));
 
             if(lang === 'tr') {
