@@ -4,106 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mblue Game | Official Corporate Hub</title>
-    <!-- Premium Google Fonts & FontAwesome -->
+    <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Orbitron:wght@500;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Orbitron:wght@500;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
         :root {
-            --bg-main: #030611;
-            --bg-surface: rgba(10, 17, 40, 0.7);
-            --bg-card: rgba(18, 28, 65, 0.5);
+            --bg-main: #050814;
+            --bg-surface: rgba(13, 20, 41, 0.6);
+            --bg-card: rgba(22, 33, 67, 0.4);
+            --neon-purple: #bd00ff;
             --neon-cyan: #00f0ff;
-            --neon-magenta: #ff007f;
-            --neon-blue: #0055ff;
+            --neon-blue: #0072ff;
             --text-pure: #ffffff;
-            --text-body: #cbd5e1;
-            --glass-border: rgba(0, 240, 255, 0.2);
+            --text-body: #a0aec0;
+            --glass-border: rgba(0, 240, 255, 0.15);
+            --glow-gradient: linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-main); color: var(--text-pure); line-height: 1.7; overflow-x: hidden; }
-        
-        /* Premium Animasyonlu Arka Plan */
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, #0c2046 0%, transparent 60%), radial-gradient(circle at 80% 80%, #1e0b36 0%, transparent 50%); z-index: -1; }
+        body { background-color: var(--bg-main); color: var(--text-pure); line-height: 1.7; overflow-x: hidden; position: relative; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, #1e0b36 0%, transparent 50%), radial-gradient(circle at 10% 80%, #001122 0%, transparent 40%); z-index: -1; }
 
-        header { background: rgba(3, 6, 17, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 240, 255, 0.1); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); }
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: 2px; text-shadow: 0 0 15px rgba(0,240,255,0.4); }
+        header { background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 2px; color: var(--text-pure); text-shadow: 0 0 10px rgba(0,240,255,0.3); }
         .logo span { color: var(--neon-cyan); }
-        nav a { color: var(--text-body); text-decoration: none; margin-left: 30px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.3s ease; position: relative; }
-        nav a:hover, nav a.active { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
         
+        .nav-container { display: flex; align-items: center; gap: 30px; }
+        nav a { color: var(--text-body); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
+        nav a:hover, nav a.active { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
+        
+        /* Premium Dil Butonu */
+        .lang-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: var(--neon-cyan); padding: 6px 14px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 13px; font-family: 'Orbitron', sans-serif; transition: all 0.3s ease; }
+        .lang-btn:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 15px var(--neon-cyan); }
+
         section { padding: 100px 8%; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-family: 'Orbitron', sans-serif; font-size: 38px; text-align: center; margin-bottom: 60px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; }
-        .section-title span { color: var(--neon-cyan); text-shadow: 0 0 20px rgba(0,240,255,0.6); }
+        .section-title { font-family: 'Orbitron', sans-serif; font-size: 36px; text-align: center; margin-bottom: 50px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+        .section-title span { background: var(--glow-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 15px rgba(0,240,255,0.3)); }
 
-        .hero { text-align: center; padding: 140px 8% 90px 8%; }
-        .hero h1 { font-family: 'Cinzel Decorative', serif; font-size: 64px; font-weight: 700; letter-spacing: 4px; margin-bottom: 20px; background: linear-gradient(135deg, #fff 40%, var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0,240,255,0.2); }
-        .hero h2 { font-family: 'Orbitron', sans-serif; font-size: 16px; color: var(--neon-magenta); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 35px; font-weight: 800; text-shadow: 0 0 10px rgba(255,0,127,0.4); }
-        .hero p { max-width: 800px; margin: 0 auto 45px auto; font-size: 18px; color: var(--text-body); font-weight: 500; }
+        .hero { text-align: center; padding: 120px 8% 80px 8%; }
+        .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 56px; font-weight: 800; letter-spacing: 3px; margin-bottom: 15px; background: linear-gradient(135deg, #fff 30%, var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero h2 { font-size: 16px; color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 35px; font-weight: 700; }
+        .hero p { max-width: 750px; margin: 0 auto 40px auto; font-size: 17px; color: var(--text-body); }
         
-        .btn-instagram { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #121c41, #030611); border: 1px solid var(--glass-border); color: white; padding: 16px 40px; text-decoration: none; border-radius: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; font-size: 13px; transition: all 0.4s ease; box-shadow: 0 0 15px rgba(0,240,255,0.1); }
-        .btn-instagram:hover { border-color: var(--neon-magenta); box-shadow: 0 0 25px rgba(255,0,127,0.4); transform: translateY(-3px); color: var(--neon-cyan); }
+        .btn-instagram { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #10172a, #020617); border: 1px solid var(--glass-border); color: white; padding: 14px 35px; text-decoration: none; border-radius: 8px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 13px; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.5); position: relative; overflow: hidden; }
+        .btn-instagram::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); transition: 0.5s; }
+        .btn-instagram:hover::before { left: 100%; }
+        .btn-instagram:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0,240,255,0.3); transform: translateY(-2px); }
 
-        .game-card { background: var(--bg-surface); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 30px; padding: 60px 50px; border: 1px solid var(--glass-border); box-shadow: 0 25px 60px rgba(0,0,0,0.6); position: relative; overflow: hidden; }
-        .game-card::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent 45%, rgba(0,240,255,0.03) 50%, transparent 55%); animation: shine 6s infinite linear; pointer-events: none; }
-        @keyframes shine { 0% { transform: translate(-30%, -30%) rotate(0deg); } 100% { transform: translate(30%, 30%) rotate(0deg); } }
-        .game-card h3 { font-family: 'Orbitron', sans-serif; font-size: 34px; color: var(--neon-cyan); margin-bottom: 25px; font-weight: 800; text-shadow: 0 0 15px rgba(0,240,255,0.3); }
-        .game-card p { color: var(--text-body); margin-bottom: 45px; font-size: 16.5px; text-align: justify; }
+        .game-card { background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 50px; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+        .game-card h3 { font-family: 'Orbitron', sans-serif; font-size: 30px; color: var(--neon-cyan); margin-bottom: 20px; font-weight: 800; letter-spacing: 1px; }
+        .game-card p { color: var(--text-body); margin-bottom: 40px; font-size: 16px; text-align: justify; }
         
-        .game-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-bottom: 50px; }
-        .game-gallery img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .game-gallery img:hover { transform: scale(1.06) translateY(-8px); border-color: var(--neon-cyan); box-shadow: 0 15px 35px rgba(0,240,255,0.4); filter: brightness(1.1); }
+        .game-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 45px; }
+        .game-gallery img { width: 100%; height: auto; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .game-gallery img:hover { transform: scale(1.05) translateY(-5px); border-color: var(--neon-cyan); box-shadow: 0 10px 25px rgba(0,240,255,0.25); }
 
         .store-buttons { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-        .store-btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 40px; border-radius: 12px; text-decoration: none; font-weight: 800; color: white; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-        .store-btn.playstore { background-color: #1a2333; border: 1px solid rgba(255,255,255,0.05); opacity: 0.4; cursor: not-allowed; }
-        .store-btn.palmstore { background: linear-gradient(135deg, #ff5100, #ff8800); box-shadow: 0 4px 20px rgba(255,81,0,0.3); }
-        .store-btn.palmstore:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,81,0,0.6); }
-        .store-btn.amazon { background: #000; border: 1px solid #ff9900; color: #ff9900; box-shadow: 0 4px 20px rgba(255,153,0,0.1); }
-        .store-btn.amazon:hover { background: #ff9900; color: #000; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,153,0,0.5); }
+        .store-btn { display: inline-flex; align-items: center; gap: 12px; padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: 700; color: white; transition: all 0.3s ease; font-size: 14px; text-transform: uppercase; }
+        .store-btn.playstore { background-color: #1e293b; border: 1px solid rgba(255,255,255,0.1); opacity: 0.5; cursor: not-allowed; }
+        .store-btn.palmstore { background: linear-gradient(135deg, #ff6b00, #ff8800); box-shadow: 0 4px 15px rgba(255,107,0,0.3); }
+        .store-btn.palmstore:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(255,107,0,0.5); }
+        .store-btn.amazon { background: linear-gradient(135deg, #333, #111); border: 1px solid #ff9900; color: #ff9900; }
+        .store-btn.amazon:hover { background: #ff9900; color: #111; transform: translateY(-2px); box-shadow: 0 6px 25px rgba(255,153,0,0.4); }
 
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .contact-box { background: var(--bg-card); padding: 40px 25px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.02); border-top: 4px solid var(--neon-blue); transition: all 0.3s ease; backdrop-filter: blur(10px); }
-        .contact-box:hover { border-top-color: var(--neon-magenta); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(255,0,127,0.2); }
-        .contact-box i { font-size: 36px; color: var(--neon-cyan); margin-bottom: 25px; text-shadow: 0 0 12px rgba(0,240,255,0.4); }
-        .contact-box h4 { margin-bottom: 15px; font-size: 19px; font-weight: 700; font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
-        .contact-box a { color: var(--text-body); text-decoration: none; font-size: 15px; word-break: break-all; font-weight: 600; transition: color 0.3s; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .contact-box { background: var(--bg-card); padding: 35px 20px; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.03); border-top: 3px solid var(--neon-blue); transition: all 0.3s ease; }
+        .contact-box:hover { border-top-color: var(--neon-cyan); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,114,255,0.15); }
+        .contact-box i { font-size: 32px; color: var(--neon-cyan); margin-bottom: 20px; }
+        .contact-box h4 { margin-bottom: 12px; font-size: 18px; font-weight: 700; font-family: 'Orbitron', sans-serif; }
+        .contact-box a { color: var(--text-body); text-decoration: none; font-size: 14px; word-break: break-all; }
         .contact-box a:hover { color: var(--neon-cyan); }
 
-        footer { background: #010307; text-align: center; padding: 45px; font-size: 13px; color: var(--text-body); border-top: 1px solid rgba(0, 240, 255, 0.1); letter-spacing: 1px; }
-        footer span { color: var(--text-pure); font-weight: 700; }
+        footer { background: #02040a; text-align: center; padding: 40px; font-size: 13px; color: var(--text-body); border-top: 1px solid rgba(255,255,255,0.05); }
+        footer span { color: var(--text-pure); font-weight: 600; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo">MBLUE<span>GAME</span></div>
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="privacy.html">Privacy</a>
-        </nav>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html" class="active" id="nav-home">Home</a>
+                <a href="about.html" id="nav-about">About</a>
+                <a href="privacy.html" id="nav-privacy">Privacy</a>
+            </nav>
+            <button class="lang-btn" onclick="toggleLanguage()">TR</button>
+        </div>
     </header>
 
     <section class="hero">
-        <h1>MBLUEGAME APPLICATIONS</h1>
-        <h2>Innovative Mobile Gaming Studio</h2>
-        <p>At MBlueGame Applications, led by Onur Uslu, we are dedicated to engineering immersive and high-performance mobile games that deliver exceptional entertainment to players worldwide. Our studio is built on the core pillars of artistic creativity, uncompromising quality, and a superior user-centric experience.</p>
+        <h1 id="hero-h1">MBLUEGAME APPLICATIONS</h1>
+        <h2 id="hero-h2">Innovative Mobile Gaming Studio</h2>
+        <p id="hero-p">At MBlueGame Applications, led by Onur Uslu, we are dedicated to engineering immersive and high-performance mobile games that deliver exceptional entertainment to players worldwide.</p>
         <a href="https://instagram.com/mbluegame" target="_blank" class="btn-instagram">
-            <i class="fa-brands fa-instagram"></i> Instagram Hub
+            <i class="fa-brands fa-instagram"></i> <span id="insta-text">Instagram Hub</span>
         </a>
     </section>
 
-    <!-- OYUN KARTI ANASAYFADA -->
     <section style="padding-top:0;">
-        <h2 class="section-title">Our <span>Games</span></h2>
+        <h2 class="section-title"><span id="title-games">Our Games</span></h2>
         <div class="game-card">
-            <h3>MBStress: Boss Rush</h3>
-            <p>MBStress: Boss Rush invites players to test their reflexes and strategic thinking skills. Survive against massive boss characters, each with its own unique mechanics. Every battle offers a distinct experience that requires patience and perfect timing. Enjoy the competition while relieving stress with simple graphics and fluid gameplay. Play Store, Palm Store and Amazon Appstore!!</p>
+            <h3 id="game-name">MBStress: Boss Rush</h3>
+            <p id="game-desc">MBStress: Boss Rush invites players to test their reflexes and strategic thinking skills. Survive against massive boss characters, each with its own unique mechanics. Every battle offers a distinct experience that requires patience and perfect timing. Enjoy the competition while relieving stress with simple graphics and fluid gameplay.</p>
             
             <div class="game-gallery">
                 <img src="./1.png" alt="Gameplay 1">
@@ -122,30 +129,82 @@
         </div>
     </section>
 
-    <section style="background: rgba(10, 17, 40, 0.2);">
-        <h2 class="section-title">Corporate <span>Relations</span></h2>
+    <section style="background: rgba(13, 20, 41, 0.3);">
+        <h2 class="section-title"><span id="title-contact">Corporate Relations</span></h2>
         <div class="contact-grid">
             <div class="contact-box">
                 <i class="fa-solid fa-headset"></i>
-                <h4>Player Support</h4>
+                <h4 id="c1-title">Player Support</h4>
                 <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a>
             </div>
             <div class="contact-box">
                 <i class="fa-solid fa-envelope"></i>
-                <h4>Direct Contact</h4>
+                <h4 id="c2-title">Direct Contact</h4>
                 <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>
             </div>
             <div class="contact-box">
                 <i class="fa-solid fa-briefcase"></i>
-                <h4>Business Inquiries</h4>
+                <h4 id="c3-title">Business Inquiries</h4>
                 <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2024 <span>Mblue Game - Onur Uslu</span>. All rights reserved. Managed globally by Onur Uslu.</p>
+        <p>© 2024 <span>Mblue Game - Onur Uslu</span>. <span id="footer-text">All rights reserved.</span></p>
     </footer>
 
+    <!-- Akıllı Dil Değiştirme Altyapısı -->
+    <script>
+        const translations = {
+            en: {
+                navHome: "Home", navAbout: "About", navPrivacy: "Privacy", btn: "TR",
+                h1: "MBLUEGAME APPLICATIONS", h2: "Innovative Mobile Gaming Studio",
+                hp: "At MBlueGame Applications, led by Onur Uslu, we are dedicated to engineering immersive and high-performance mobile games that deliver exceptional entertainment to players worldwide.",
+                insta: "Instagram Hub", tGames: "Our Games",
+                gDesc: "MBStress: Boss Rush invites players to test their reflexes and strategic thinking skills. Survive against massive boss characters, each with its own unique mechanics. Every battle offers a distinct experience that requires patience and perfect timing. Enjoy the competition while relieving stress with simple graphics and fluid gameplay.",
+                tContact: "Corporate Relations", c1: "Player Support", c2: "Direct Contact", c3: "Business Inquiries",
+                foot: "All rights reserved."
+            },
+            tr: {
+                navHome: "Ana Sayfa", navAbout: "Hakkımızda", navPrivacy: "Gizlilik", btn: "EN",
+                h1: "MBLUEGAME UYGULAMALARI", h2: "Yenilikçi Mobil Oyun Stüdyosu",
+                hp: "Onur Uslu liderliğindeki MBlueGame Uygulamaları olarak, dünya çapındaki oyunculara olağanüstü eğlence sunan, yüksek performanslı ve sürükleyici mobil oyunlar geliştirmeye kendimizi adadık.",
+                insta: "Instagram Adresi", tGames: "Oyunlarımız",
+                gDesc: "MBStress: Boss Rush, oyuncuları reflekslerini ve stratejik düşünme becerilerini test etmeye davet ediyor. Her biri kendine özgü mekaniklere sahip devasa patron karakterlerine karşı hayatta kalın. Her savaş, sabır ve kusursuz zamanlama gerektiren farklı bir deneyim sunar. Basit grafikler ve akıcı oynanışla stres atarken rekabetin tadını çıkarın.",
+                tContact: "Kurumsal İlişkiler", c1: "Oyuncu Desteği", c2: "Doğrudan İletişim", c3: "İş Birlikleri",
+                foot: "Tüm hakları saklıdır."
+            }
+        };
+
+        let currentLang = localStorage.getItem('mblue_lang') || 'en';
+
+        function updateUI() {
+            const t = translations[currentLang];
+            document.getElementById('nav-home').innerText = t.navHome;
+            document.getElementById('nav-about').innerText = t.navAbout;
+            document.getElementById('nav-privacy').innerText = t.navPrivacy;
+            document.querySelector('.lang-btn').innerText = t.btn;
+            document.getElementById('hero-h1').innerText = t.h1;
+            document.getElementById('hero-h2').innerText = t.h2;
+            document.getElementById('hero-p').innerText = t.hp;
+            document.getElementById('insta-text').innerText = t.insta;
+            document.getElementById('title-games').innerText = t.tGames;
+            document.getElementById('game-desc').innerText = t.gDesc;
+            document.getElementById('title-contact').innerText = t.tContact;
+            document.getElementById('c1-title').innerText = t.c1;
+            document.getElementById('c2-title').innerText = t.c2;
+            document.getElementById('c3-title').innerText = t.c3;
+            document.getElementById('footer-text').innerText = t.foot;
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'tr' : 'en';
+            localStorage.setItem('mblue_lang', currentLang);
+            updateUI();
+        }
+
+        document.addEventListener("DOMContentLoaded", updateUI);
+    </script>
 </body>
 </html>
