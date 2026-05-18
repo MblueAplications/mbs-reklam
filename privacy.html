@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Mblue Game Official</title>
+    
+    <!-- GOOGLE SEO OPTİMİZASYONU -->
+    <meta name="description" content="Official Privacy Policy of Mblue Game applications. Learn how we secure your data in MBStress: Boss Rush.">
+    <meta name="robots" content="index, follow">
+
+    <!-- TARAYICI SEKME SİMGESİ (FAVICON) -->
+    <link rel="icon" type="image/jpeg" href="./logo.jpg">
+    <link rel="apple-touch-icon" href="./logo.jpg">
+
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
@@ -13,29 +22,45 @@
     <style>
         :root {
             --bg-main: #03050c;
-            --bg-surface: rgba(8, 14, 31, 0.88); /* Yasal metinlerin net okunması için ekstra karartıldı */
+            --bg-surface: rgba(8, 14, 31, 0.88);
             --neon-cyan: #00f0ff;
             --text-pure: #ffffff;
-            --text-body: #e2e8f0; /* Yazılar keskin beyaz tonuna çekildi */
+            --text-body: #e2e8f0;
             --glass-border: rgba(0, 240, 255, 0.25);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         html { scroll-behavior: smooth; }
         
-        /* İstediğiniz arkaplan3.webp Görseli ve Üzerine Çekilen Karartma Perdesi */
         body { 
             background: linear-gradient(rgba(3, 5, 12, 0.75), rgba(3, 5, 12, 0.75)), url('./arkaplan3.webp') no-repeat center center fixed; 
             background-size: cover; 
             color: var(--text-pure); 
             line-height: 1.7; 
             overflow-x: hidden; 
+            position: relative;
         }
 
-        /* Modern Üst Menü */
+        /* HAREKETLİ SİBER PARÇACIKLAR */
+        .bg-particles {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: -1; overflow: hidden;
+        }
+        .particle {
+            position: absolute; display: block; border-radius: 50%;
+            background: rgba(0, 240, 255, 0.2);
+            bottom: -20px; animation: floatUp 12s infinite linear;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-105vh) scale(0.5); opacity: 0; }
+        }
+
         header { background: rgba(3, 5, 12, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
         
-        /* Şekilli Gelişmiş Işıltılı Logo */
+        /* Şekilli Işıltılı Yeni Logo */
         .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 3px; color: var(--text-pure); text-shadow: 0 0 10px rgba(0,240,255,0.4); display: flex; align-items: center; gap: 8px; }
         .logo i { color: var(--neon-cyan); font-size: 20px; animation: pulse 2s infinite alternative; }
         .logo span { background: linear-gradient(135deg, var(--neon-cyan), #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
@@ -45,17 +70,15 @@
         nav a { color: var(--text-body); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; margin-left: 20px; }
         nav a:hover, nav a.active { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
 
-        /* Akıllı Dil Butonları */
         .lang-switcher { display: flex; gap: 8px; border: 1px solid var(--glass-border); padding: 4px; border-radius: 6px; background: rgba(0,0,0,0.6); }
         .lang-btn { background: transparent; border: none; color: var(--text-body); padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
         .lang-btn:hover { color: var(--text-pure); }
         .lang-btn.active { background: var(--neon-cyan); color: #000; box-shadow: 0 0 10px rgba(0,240,255,0.4); }
 
-        section { padding: 100px 8%; max-width: 1100px; margin: 0 auto; }
+        section { padding: 100px 8%; max-width: 1100px; margin: 0 auto; position: relative; z-index: 5; }
         .section-title { font-family: 'Orbitron', sans-serif; font-size: 36px; text-align: center; margin-bottom: 50px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
         .section-title span { color: var(--neon-cyan); text-shadow: 0 0 15px rgba(0,240,255,0.5); }
 
-        /* Yasal Metin Bloğu (Cam Efekti) */
         .content-block { background: var(--bg-surface); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 50px; border-radius: 24px; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
         .content-block h3 { font-family: 'Orbitron', sans-serif; color: var(--neon-cyan); margin-top: 40px; margin-bottom: 15px; font-size: 20px; font-weight: 700; letter-spacing: 1px; border-bottom: 1px solid rgba(0, 240, 255, 0.1); padding-bottom: 8px; }
         .content-block h3:first-of-type { margin-top: 0; }
@@ -65,7 +88,6 @@
         .content-block a { color: var(--neon-cyan); text-decoration: none; font-weight: 600; transition: all 0.3s; }
         .content-block a:hover { text-shadow: 0 0 8px var(--neon-cyan); text-decoration: underline; }
 
-        /* JS Çeviri Yardımcı Sınıfı */
         .lang-section { display: none; }
         .lang-section.active-lang { display: block; }
 
@@ -75,7 +97,10 @@
 </head>
 <body>
 
-    <!-- ÜST MENÜ -->
+    <!-- SÜZÜLEN PARÇACIKLAR CONTAINER -->
+    <div class="bg-particles" id="particle-container"></div>
+
+    <!-- ÜST NAVİGASYON -->
     <header>
         <div class="logo"><i class="fa-solid fa-gamepad"></i>MBLUE<span>GAME</span></div>
         <div class="nav-container">
@@ -97,7 +122,7 @@
         
         <div class="content-block">
             
-            <!-- İNGİLİZCE TAM VE UZUN SÜRÜM -->
+            <!-- İNGİLİZCE DETAYLI METİN -->
             <div id="lang-en" class="lang-section active-lang">
                 <p>This privacy policy applies to the MBStress: Boss Rush app (hereinafter referred to as "Application") for mobile devices. The Application was developed by Onur Uslu under the brand MBlueGame Applications (hereinafter referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
                 
@@ -144,7 +169,7 @@
                 <p>If you have any questions regarding privacy while using the Application, please contact Onur Uslu via email at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>, <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a> and <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a>.</p>
             </div>
 
-            <!-- TÜRKÇE TAM VE UZUN SÜRÜM -->
+            <!-- TÜRKÇE DETAYLI METİN -->
             <div id="lang-tr" class="lang-section">
                 <p>Bu gizlilik politikası, mobil cihazlar için geliştirilen MBStress: Boss Rush uygulaması (bundan sonra "Uygulama" olarak anılacaktır) için geçerlidir. Uygulama, MBlueGame Applications markası altında Onur Uslu (bundan sonra "Hizmet Sağlayıcı" olarak anılacaktır) tarafından Reklam Destekli bir hizmet olarak geliştirilmiştir. Bu hizmet "OLDUĞU GİBİ" kullanım için tasarlanmıştır.</p>
                 
@@ -185,10 +210,10 @@
                 <p>Hizmet Sağlayıcı, bilgilerinizin gizliliğini koruma konusunda hassasiyet göstermektedir. İşlenen ve sürdürülen bilgileri korumak amacıyla fiziksel, elektronik ve prosedürel güvenceler sağlanmaktadır.</p>
 
                 <h3>Değişiklikler</h3>
-                <p>Subay ve yasal mevzuata tam uyumlu olan bu Gizlilik Politikası zaman zaman güncellenebilir. Hizmet Sağlayıcı, yeni Gizlilik Politikasını bu sayfada güncelleyerek herhangi bir değişikliği size bildirecektir. Bu politika 2026-05-09 tarihinden itibaren geçerlidir.</p>
+                <p>Bu Gizlilik Politikası zaman zaman güncellenebilir. Hizmet Sağlayıcı, yeni Gizlilik Politikasını bu sayfada güncelleyerek herhangi bir değişikliği size bildirecektir. Bu politika 2026-05-09 tarihinden itibaren geçerlidir.</p>
 
                 <h3>Bize Ulaşın</h3>
-                <p>Uygulamayı kullanırken gizlilikle ilgili herhangi bir sorunuz olursa, lütfen Onur Uslu ile <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>, <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a> ve <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a> e-posta adresleri üzerinden iletişime geçin.</p>
+                <p>Uygulamayı kullanırken gizlilikle ilgili herhangi bir sorunuz olursa, lütfen Onur Uslu ile <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>, <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a> and <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a> e-posta adresleri üzerinden iletişime geçin.</p>
             </div>
 
         </div>
@@ -199,8 +224,24 @@
         <p>© 2024 <span id="footer-text">Mblue Game - Onur Uslu. All rights reserved. Managed globally by Onur Uslu.</span></p>
     </footer>
 
-    <!-- LANGUAGE CONTROL SCRIPT -->
+    <!-- DİL KONTROLÜ VE PARÇACIK MOTORU -->
     <script>
+        // SÜZÜLEN PARÇACIK MOTORU
+        const container = document.getElementById('particle-container');
+        const particleCount = 20;
+        for (let i = 0; i < particleCount; i++) {
+            let particle = document.createElement('span');
+            particle.classList.add('particle');
+            let size = Math.random() * 4 + 2;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = Math.random() * 6 + 8 + 's';
+            container.appendChild(particle);
+        }
+
+        // DİL MOTORU
         function switchLanguage(lang) {
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
