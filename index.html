@@ -3,45 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mblue Game - Official Corporate Website</title>
-    <!-- FontAwesome İkon Kütüphanesi -->
+    <title>Mblue Game | Official Website</title>
+    <!-- İkonlar için FontAwesome Kütüphanesi -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         :root {
-            --bg-color: #0b132b;
-            --card-bg: #1c2541;
+            --bg-dark: #0a1128;
+            --bg-card: #1c2541;
             --accent-cyan: #00b4d8;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.6; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
 
-        /* Navigasyon */
+        /* Üst Menü / Navigasyon */
         header { background: rgba(28, 37, 65, 0.95); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--accent-cyan); }
-        .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; color: var(--text-light); }
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; color: var(--text-main); }
         .logo span { color: var(--accent-cyan); }
         nav a { color: var(--text-muted); text-decoration: none; margin-left: 25px; font-weight: 600; transition: color 0.3s; }
         nav a:hover { color: var(--accent-cyan); }
 
-        /* Genel Bölüm Ayarları */
-        section { padding: 80px 8%; }
-        .section-title { font-size: 32px; text-align: center; margin-bottom: 40px; position: relative; color: var(--text-light); }
+        /* Ortak Bölüm Tasarımları */
+        section { padding: 80px 8%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .section-title { font-size: 32px; text-align: center; margin-bottom: 40px; position: relative; text-transform: uppercase; letter-spacing: 1px; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent-cyan); margin: 10px auto 0 auto; border-radius: 2px; }
 
-        /* Ana Sayfa Üst Kısım */
-        .hero { text-align: center; background: radial-gradient(circle at top, #1c2541 0%, #0b132b 100%); padding-top: 120px; }
-        .hero h1 { font-size: 52px; margin-bottom: 15px; }
-        .hero h2 { font-size: 22px; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
-        .hero p { max-width: 800px; margin: 0 auto 40px auto; font-size: 18px; color: var(--text-muted); }
+        /* Hero Tanıtım Alanı */
+        .hero { text-align: center; background: radial-gradient(circle at top, #1c2541 0%, #0a1128 100%); padding-top: 120px; }
+        .hero h1 { font-size: 46px; margin-bottom: 10px; font-weight: 800; }
+        .hero h2 { font-size: 18px; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; font-weight: 600; }
+        .hero p { max-width: 800px; margin: 0 auto 40px auto; font-size: 17px; color: var(--text-muted); text-align: center; }
         
         .btn-instagram { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; padding: 12px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; transition: transform 0.3s; }
         .btn-instagram:hover { transform: translateY(-3px); }
 
-        /* Oyun Kartı */
-        .game-card { background: var(--card-bg); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.05); max-width: 900px; margin: 0 auto; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
-        .game-card h3 { font-size: 28px; color: var(--accent-cyan); margin-bottom: 20px; }
+        /* MBStress Oyun Alanı */
+        .game-card { background: var(--bg-card); border-radius: 20px; padding: 40px; max-width: 900px; margin: 0 auto; box-shadow: 0 15px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); }
+        .game-card h3 { font-size: 26px; color: var(--accent-cyan); margin-bottom: 20px; font-weight: 700; }
         .game-card p { color: var(--text-muted); margin-bottom: 35px; font-size: 16px; text-align: justify; }
         
         .store-buttons { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
@@ -52,61 +52,59 @@
         .store-btn.amazon { background-color: #ff9900; color: #111; }
         .store-btn.amazon:hover { background-color: #e68a00; transform: translateY(-2px); }
 
-        /* Kurumsal Detaylı Metinler */
-        .content-block { max-width: 900px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
-        .content-block h3 { color: var(--accent-cyan); margin-top: 30px; margin-bottom: 15px; font-size: 22px; }
-        .content-block h3:first-child { margin-top: 0; }
-        .content-block p, .content-block ul { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; text-align: justify; }
-        .content-block ul { padding-left: 20px; }
-        .content-block li { margin-bottom: 10px; }
+        /* Kurumsal Detay Blokları (About & Privacy) */
+        .content-block { max-width: 900px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .content-block p { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; text-align: justify; }
 
         /* İletişim */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
-        .contact-box { background: var(--card-bg); padding: 30px; border-radius: 12px; text-align: center; border-top: 4px solid var(--accent-cyan); }
+        .contact-box { background: var(--bg-card); padding: 30px; border-radius: 12px; text-align: center; border-top: 4px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         .contact-box i { font-size: 32px; color: var(--accent-cyan); margin-bottom: 15px; }
-        .contact-box h4 { margin-bottom: 10px; font-size: 20px; }
-        .contact-box a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; font-size: 16px; word-break: break-all; }
+        .contact-box h4 { margin-bottom: 10px; font-size: 20px; font-weight: 600; }
+        .contact-box a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; font-size: 16px; word-break: break-all; font-weight: 500; }
         .contact-box a:hover { color: var(--accent-cyan); }
 
-        footer { background: #070d1f; text-align: center; padding: 35px; font-size: 14px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
-        footer span { color: var(--text-light); font-weight: 600; }
+        footer { background: #050b1a; text-align: center; padding: 35px; font-size: 14px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
+        footer span { color: var(--text-main); font-weight: 600; }
     </style>
 </head>
 <body>
 
-    <!-- ÜST MENÜ -->
+    <!-- MENÜ ALANI -->
     <header>
         <div class="logo">Mblue<span> Game</span></div>
         <nav>
-            <a href="#anasayfa">Home</a>
-            <a href="#games">Our Games</a>
+            <a href="#anasayfa">Ana Sayfa</a>
+            <a href="#oyunlar">MBStress: Boss Rush</a>
             <a href="#about">About Us</a>
             <a href="#privacy">Privacy Policy</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- ANA SAYFA / HERO -->
+    <!-- ANA SAYFA / HERO (Orijinal Google Sites İçeriği) -->
     <section class="hero" id="anasayfa">
-        <h1>MBlueGame Applications</h1>
+        <h1>MBLUE GAME APPLICATIONS</h1>
         <h2>Innovative Mobile Gaming Studio</h2>
         <p>At MBlueGame Applications, led by Onur Uslu, we are dedicated to engineering immersive and high-performance mobile games that deliver exceptional entertainment to players worldwide. Our studio is built on the core pillars of artistic creativity, uncompromising quality, and a superior user-centric experience.</p>
         
+        <!-- Orijinal Instagram Bağlantısı -->
         <a href="https://instagram.com" target="_blank" class="btn-instagram">
-            <i class="fa-brands fa-instagram"></i> Follow on Instagram
+            <i class="fa-brands fa-instagram"></i> Instagram Address
         </a>
     </section>
 
-    <!-- OYUNLAR BÖLÜMÜ -->
-    <section id="games">
+    <!-- MBSTRESS: BOSS RUSH BÖLÜMÜ (Orijinal Google Sites İçeriği) -->
+    <section id="oyunlar">
         <h2 class="section-title">Our Games</h2>
         <div class="game-card">
             <h3>MBStress: Boss Rush</h3>
-            <p>MBStress: Boss Rush invites players to test their reflexes and strategic thinking skills. Survive against massive boss characters, each with its own unique mechanics. Every battle offers a distinct experience that requires patience and perfect timing. Enjoy the competition while relieving stress with simple graphics and fluid gameplay. Download now from official stores!</p>
+            <p>MBStress: Boss Rush invites players to test their reflexes and strategic thinking skills. Survive against massive boss characters, each with its own unique mechanics. Every battle offers a distinct experience that requires patience and perfect timing. Enjoy the competition while relieving stress with simple graphics and fluid gameplay. Play Store, Palm Store and Amazon Appstore!!</p>
             
             <div class="store-buttons">
+                <!-- Sitenizdeki Mağaza Linkleri ve Yakında Durumu -->
                 <a href="#" class="store-btn playstore" onclick="return false;">
-                    <i class="fa-brands fa-google-play"></i> Play Store (Coming Soon)
+                    <i class="fa-brands fa-google-play"></i> Play Store ( Coming Soon )
                 </a>
                 <a href="https://palmstoreapp.com" target="_blank" class="store-btn palmstore">
                     <i class="fa-solid fa-gamepad"></i> Palm Store
@@ -118,71 +116,44 @@
         </div>
     </section>
 
-    <!-- DETAYLI HAKKIMIZDA BÖLÜMÜ -->
+    <!-- ABOUT US BÖLÜMÜ (Orijinal Google Sites İçeriği) -->
     <section id="about" style="background: #0f172a;">
-        <h2 class="section-title">About Our Studio</h2>
+        <h2 class="section-title">About Us</h2>
         <div class="content-block">
-            <h3>Who We Are</h3>
-            <p>Mblue Game is an independent mobile gaming studio owned and operated by Onur Uslu. Founded with a vision to build highly engaging, polished, and creative digital experiences, we blend advanced development methodologies with community-driven designs.</p>
-            
-            <h3>Our Mission & Core Values</h3>
-            <p>Our mission is simple: to engineer memorable mobile games that give players an escape from daily stress while challenging their skills. We base our workflow on three core developer commitments:</p>
-            <ul>
-                <li><strong>Uncompromising Quality:</strong> Ensuring bug-free, smooth performance across various mid-range and high-end Android devices.</li>
-                <li><strong>Artistic Originality:</strong> Creating striking minimalist visual assets and seamless control mechanics tailored for mobile touch screens.</li>
-                <li><strong>Player-First Support:</strong> Maintaining open communication channels for direct performance reports and community optimization ideas.</li>
-            </ul>
+            <p>Mblue Game is owned and operated by Onur Uslu. As an innovative mobile gaming studio, we focus on engineering immersive, highly optimized, and high-performance applications designed to provide global users with top-tier entertainment and fluid interactive experiences.</p>
         </div>
     </section>
 
-    <!-- DETAYLI RESMİ GİZLİLİK POLİTİKASI (PRIVACY POLICY) -->
+    <!-- PRIVACY POLICY BÖLÜMÜ (Orijinal Google Sites İçeriği) -->
     <section id="privacy">
         <h2 class="section-title">Privacy Policy</h2>
         <div class="content-block">
-            <p><strong>Effective Date:</strong> May 18, 2026</p>
-            <p>This Privacy Policy describes how Mblue Game ("we", "our", or "us"), operated by Onur Uslu, handles information collected through our mobile applications (including MBStress: Boss Rush) and this official website.</p>
-            
-            <h3>1. Information Collection and Use</h3>
-            <p>Our applications are built as commercial products. We do not explicitly collect personal identifiable information (PII) such as your legal name, physical address, or phone number directly. However, our games integrated with third-party store services (like Amazon Appstore or Palm Store) might process automated device data for analytics and operational health.</p>
-            
-            <h3>2. Third-Party Services & Stores</h3>
-            <p>Our products utilize verified third-party distribution SDKs which may collect standard data used to identify devices. Please review the external privacy guidelines of our distribution networks:</p>
-            <ul>
-                <li>Amazon Appstore Privacy Notice</li>
-                <li>Palm Store / Transsion Service Regulations</li>
-            </ul>
-
-            <h3>3. Data Protection and Security</h3>
-            <p>We implement industry-standard security safeguards to protect any localized device configurations or internal high scores. No method of internet transmission or electronic storage is 100% secure, but we continuously update our software baselines to minimize security risks.</p>
-
-            <h3>4. Children's Privacy</h3>
-            <p>Our games comply with international standards regarding children's online data safety. We do not knowingly collect personal data from children under 13. If you are a parent or guardian and discover that your child has provided external log data, please reach out via our official support email immediately so we can execute necessary removal workflows.</p>
-
-            <h3>5. Contact Information</h3>
-            <p>For official legal data inquiries, policy interpretations, or explicit data requests regarding our applications, please contact us directly via our formal data compliance channels.</p>
+            <p>This site uses cookies from Google to deliver its services and to analyze traffic. Information about your use of this site is shared with Google. By using this site, you agree to its use of cookies.</p>
         </div>
     </section>
 
-    <!-- İLETİŞİM ALANI -->
+    <!-- DESTEK VE İLETİŞİM ALANI (Orijinal Google Sites İçeriği) -->
     <section id="contact" style="background: #0f172a;">
-        <h2 class="section-title">Support & Corporate Business</h2>
+        <h2 class="section-title">Support & Business</h2>
         <div class="contact-grid">
+            <!-- Sitenizdeki Resmi Destek E-postası -->
             <div class="contact-box">
                 <i class="fa-solid fa-headset"></i>
-                <h4>Player Support</h4>
+                <h4>Support</h4>
                 <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a>
             </div>
+            <!-- Sitenizdeki Resmi Business E-postası -->
             <div class="contact-box">
                 <i class="fa-solid fa-briefcase"></i>
-                <h4>Business & Licensing</h4>
+                <h4>Business</h4>
                 <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (Orijinal Google Sites İçeriği) -->
     <footer>
-        <p>© 2026 <span>Mblue Game - Onur Uslu</span>. Mblue Game is fully owned and operated by Onur Uslu. All Rights Reserved.</p>
+        <p>© 2024 <span>Mblue Game - Onur Uslu</span>. Mblue Game is owned and operated by Onur Uslu. All Rights Reserved.</p>
     </footer>
 
 </body>
