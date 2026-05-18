@@ -23,7 +23,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         html { scroll-behavior: smooth; }
         
-        /* Yeni Nesil Arka Plan Resmi Entegrasyonu (arkaplan3.avif) */
+        /* İstediğiniz arkaplan3.avif Resmi Entegre Edildi */
         body { 
             background: url('./arkaplan3.avif') no-repeat center center fixed; 
             background-size: cover; 
@@ -32,15 +32,20 @@
             overflow-x: hidden; 
         }
 
+        /* Navigasyon / Üst Menü */
         header { background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 2px; color: var(--text-pure); text-shadow: 0 0 10px rgba(0,240,255,0.3); }
-        .logo span { color: var(--neon-cyan); }
+        
+        /* Şekilli ve Işıltılı Yeni Logo Tasarımı */
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 3px; color: var(--text-pure); text-shadow: 0 0 10px rgba(0,240,255,0.4); display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--neon-cyan); font-size: 20px; animation: pulse 2s infinite alternative; }
+        .logo span { background: linear-gradient(135deg, var(--neon-cyan), #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        @keyframes pulse { from { text-shadow: 0 0 5px var(--neon-cyan); } to { text-shadow: 0 0 15px var(--neon-cyan); } }
         
         .nav-container { display: flex; align-items: center; gap: 30px; }
         nav a { color: var(--text-body); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; margin-left: 20px; }
         nav a:hover, nav a.active { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
 
-        /* Dil Değiştirme Butonları */
+        /* Dil Butonları */
         .lang-switcher { display: flex; gap: 8px; border: 1px solid var(--glass-border); padding: 4px; border-radius: 6px; background: rgba(0,0,0,0.5); }
         .lang-btn { background: transparent; border: none; color: var(--text-body); padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
         .lang-btn:hover { color: var(--text-pure); }
@@ -68,9 +73,9 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- ÜST NAVİGASYON -->
     <header>
-        <div class="logo">MBLUE<span>GAME</span></div>
+        <div class="logo"><i class="fa-solid fa-gamepad"></i>MBLUE<span>GAME</span></div>
         <div class="nav-container">
             <nav>
                 <a href="index.html" id="menu-home">Home</a>
@@ -84,13 +89,13 @@
         </div>
     </header>
 
-    <!-- CONTENT -->
+    <!-- METİN ALANI -->
     <section>
         <h2 class="section-title" id="page-title">Legal & <span>Privacy</span></h2>
         
         <div class="content-block">
             
-            <!-- ENGLISH FULL VERSION -->
+            <!-- İNGİLİZCE TAM VE DETAYLI METİN -->
             <div id="lang-en" class="lang-section active-lang">
                 <p>This privacy policy applies to the MBStress: Boss Rush app (hereinafter referred to as "Application") for mobile devices. The Application was developed by Onur Uslu under the brand MBlueGame Applications (hereinafter referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
                 
@@ -137,7 +142,7 @@
                 <p>If you have any questions regarding privacy while using the Application, please contact Onur Uslu via email at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>, <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a> and <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a>.</p>
             </div>
 
-            <!-- TURKISH FULL VERSION -->
+            <!-- TÜRKÇE TAM VE DETAYLI METİN -->
             <div id="lang-tr" class="lang-section">
                 <p>Bu gizlilik politikası, mobil cihazlar için geliştirilen MBStress: Boss Rush uygulaması (bundan sonra "Uygulama" olarak anılacaktır) için geçerlidir. Uygulama, MBlueGame Applications markası altında Onur Uslu (bundan sonra "Hizmet Sağlayıcı" olarak anılacaktır) tarafından Reklam Destekli bir hizmet olarak geliştirilmiştir. Bu hizmet "OLDUĞU GİBİ" kullanım için tasarlanmıştır.</p>
                 
@@ -192,7 +197,7 @@
         <p>© 2024 <span id="footer-text">Mblue Game - Onur Uslu. All rights reserved. Managed globally by Onur Uslu.</span></p>
     </footer>
 
-    <!-- LANGUAGE CONTROL SCRIPT -->
+    <!-- DİL KONTROLÜ -->
     <script>
         function switchLanguage(lang) {
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
