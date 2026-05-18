@@ -54,14 +54,20 @@
 
         /* Kurumsal Detay Blokları (About & Privacy) */
         .content-block { max-width: 900px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .content-block h3 { color: var(--accent-cyan); margin-top: 30px; margin-bottom: 12px; font-size: 22px; font-weight: 700; }
+        .content-block h3:first-of-type { margin-top: 0; }
         .content-block p { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; text-align: justify; }
+        .content-block ul { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; padding-left: 20px; }
+        .content-block li { margin-bottom: 10px; }
+        .content-block a { color: var(--accent-cyan); text-decoration: none; }
+        .content-block a:hover { text-decoration: underline; }
 
         /* İletişim */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
-        .contact-box { background: var(--bg-card); padding: 30px; border-radius: 12px; text-align: center; border-top: 4px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .contact-box i { font-size: 32px; color: var(--accent-cyan); margin-bottom: 15px; }
-        .contact-box h4 { margin-bottom: 10px; font-size: 20px; font-weight: 600; }
-        .contact-box a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; font-size: 16px; word-break: break-all; font-weight: 500; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 950px; margin: 0 auto; }
+        .contact-box { background: var(--bg-card); padding: 25px 15px; border-radius: 12px; text-align: center; border-top: 4px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .contact-box i { font-size: 28px; color: var(--accent-cyan); margin-bottom: 15px; }
+        .contact-box h4 { margin-bottom: 10px; font-size: 18px; font-weight: 600; }
+        .contact-box a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; font-size: 14px; word-break: break-all; font-weight: 500; }
         .contact-box a:hover { color: var(--accent-cyan); }
 
         footer { background: #050b1a; text-align: center; padding: 35px; font-size: 14px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
@@ -75,26 +81,26 @@
         <div class="logo">Mblue<span> Game</span></div>
         <nav>
             <a href="#anasayfa">Ana Sayfa</a>
-            <a href="#oyunlar">MBStress: Boss Rush</a>
+            <a href="#oyunlar">Our Games</a>
             <a href="#about">About Us</a>
             <a href="#privacy">Privacy Policy</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- ANA SAYFA / HERO (Orijinal Google Sites İçeriği) -->
+    <!-- ANA SAYFA / HERO -->
     <section class="hero" id="anasayfa">
         <h1>MBLUE GAME APPLICATIONS</h1>
         <h2>Innovative Mobile Gaming Studio</h2>
         <p>At MBlueGame Applications, led by Onur Uslu, we are dedicated to engineering immersive and high-performance mobile games that deliver exceptional entertainment to players worldwide. Our studio is built on the core pillars of artistic creativity, uncompromising quality, and a superior user-centric experience.</p>
         
-        <!-- Orijinal Instagram Bağlantısı -->
-        <a href="https://instagram.com" target="_blank" class="btn-instagram">
+        <!-- Orijinal Instagram Linki Entegre Edildi -->
+        <a href="https://www.instagram.com/mbluegame" target="_blank" class="btn-instagram">
             <i class="fa-brands fa-instagram"></i> Instagram Address
         </a>
     </section>
 
-    <!-- MBSTRESS: BOSS RUSH BÖLÜMÜ (Orijinal Google Sites İçeriği) -->
+    <!-- MBSTRESS: BOSS RUSH BÖLÜMÜ -->
     <section id="oyunlar">
         <h2 class="section-title">Our Games</h2>
         <div class="game-card">
@@ -102,7 +108,6 @@
             <p>MBStress: Boss Rush invites players to test their reflexes and strategic thinking skills. Survive against massive boss characters, each with its own unique mechanics. Every battle offers a distinct experience that requires patience and perfect timing. Enjoy the competition while relieving stress with simple graphics and fluid gameplay. Play Store, Palm Store and Amazon Appstore!!</p>
             
             <div class="store-buttons">
-                <!-- Sitenizdeki Mağaza Linkleri ve Yakında Durumu -->
                 <a href="#" class="store-btn playstore" onclick="return false;">
                     <i class="fa-brands fa-google-play"></i> Play Store ( Coming Soon )
                 </a>
@@ -116,33 +121,88 @@
         </div>
     </section>
 
-    <!-- ABOUT US BÖLÜMÜ (Orijinal Google Sites İçeriği) -->
+    <!-- GÖNDERDİĞİNİZ EKSİKSİZ ABOUT US METNİ -->
     <section id="about" style="background: #0f172a;">
         <h2 class="section-title">About Us</h2>
         <div class="content-block">
-            <p>Mblue Game is owned and operated by Onur Uslu. As an innovative mobile gaming studio, we focus on engineering immersive, highly optimized, and high-performance applications designed to provide global users with top-tier entertainment and fluid interactive experiences.</p>
+            <h3>Who We Are</h3>
+            <p>MBlueGame Applications is a premier mobile game development studio dedicated to crafting engaging and innovative digital experiences for a global audience. Led by founder and lead developer Onur Uslu, our studio is built on a foundation of technical excellence and a deep-seated passion for the interactive entertainment industry. We specialize in delivering high-fidelity graphics, seamless gameplay mechanics, and intuitive, user-centric designs.</p>
+            
+            <h3>Our Mission</h3>
+            <p>Our mission is to redefine mobile entertainment by developing titles that transcend traditional gaming. From intense arcade challenges to immersive strategic adventures, MBlueGame Applications is committed to uncompromising quality in every pixel. We strive to create lasting impressions through rewarding gameplay and consistent innovation.</p>
+            
+            <h3>Global Distribution</h3>
+            <p>We combine advanced technical expertise with boundless artistic creativity to bring unique concepts to life. Our portfolio is proudly featured across major global mobile ecosystems, including Google Play Store, Amazon Appstore, and Palm Store (Transsion). We are constantly evolving to lead and expand our presence in the international gaming market.</p>
+            
+            <h3>Legal Ownership</h3>
+            <p>MBlueGame Applications is a professional development studio. All operations, intellectual properties, and digital assets are exclusively owned and managed by Onur Uslu.</p>
         </div>
     </section>
 
-    <!-- PRIVACY POLICY BÖLÜMÜ (Orijinal Google Sites İçeriği) -->
+    <!-- GÖNDERDİĞİNİZ EKSİKSİZ PRIVACY POLICY METNİ -->
     <section id="privacy">
         <h2 class="section-title">Privacy Policy</h2>
         <div class="content-block">
-            <p>This site uses cookies from Google to deliver its services and to analyze traffic. Information about your use of this site is shared with Google. By using this site, you agree to its use of cookies.</p>
+            <p>This privacy policy applies to the MBStress: Boss Rush app (hereinafter referred to as "Application") for mobile devices. The Application was developed by Onur Uslu under the brand MBlueGame Applications (hereinafter referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
+            
+            <h3>Information Collection and Use</h3>
+            <p>The Application collects information when you download and use it. This information may include:</p>
+            <ul>
+                <li>Your device's Internet Protocol address (e.g., IP address)</li>
+                <li>The pages of the Application that you visit, the time and date of your visit, and the time spent on those pages</li>
+                <li>The total time spent on the Application</li>
+                <li>The operating system used on your mobile device</li>
+            </ul>
+            <p>The Application does not collect precise information about the location of your mobile device.</p>
+            <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
+            <p>The Service Provider may use the information you provided to contact you from time to time to provide you with important information, required notices, and marketing promotions.</p>
+            <p>For a better experience, while using the Application, the Service Provider may require you to provide certain personally identifiable information. The information that the Service Provider requests will be retained and used as described in this privacy policy.</p>
+
+            <h3>Third Party Access</h3>
+            <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways described in this privacy statement.</p>
+            <p>The Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the privacy policies of the third-party service providers used by the Application:</p>
+            <ul>
+                <li><a href="https://google.com" target="_blank">Google Play Services</a></li>
+                <li><a href="#" target="_blank">Palm Store</a></li>
+                <li><a href="https://amazon.com" target="_blank">Amazon Appstore</a></li>
+                <li><a href="https://google.com" target="_blank">AdMob</a></li>
+                <li><a href="https://inmobi.com" target="_blank">Inmobi</a></li>
+            </ul>
+
+            <h3>Opt-out Rights</h3>
+            <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall processes available as part of your mobile device or via the mobile application marketplace or network.</p>
+
+            <h3>Data Retention Policy</h3>
+            <p>The Service Provider (Onur Uslu) will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. If you’d like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>.</p>
+
+            <h3>Children</h3>
+            <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13. The Application does not address anyone under the age of 13. If the Service Provider discovers that a child under 13 has provided personal information, they will immediately delete this from their servers.</p>
+
+            <h3>Security</h3>
+            <p>The Service Provider is concerned about safeguarding the confidentiality of your information. Physical, electronic, and procedural safeguards are provided to protect the information processed and maintained.</p>
+
+            <h3>Changes</h3>
+            <p>This Privacy Policy may be updated from time to time. The Service Provider will notify you of any changes by updating this page with the new Privacy Policy. This policy is effective as of 2026-05-09.</p>
+
+            <h3>Contact Us</h3>
+            <p>If you have any questions regarding privacy while using the Application, please contact Onur Uslu via email at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>, <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a> and <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a>.</p>
         </div>
     </section>
 
-    <!-- DESTEK VE İLETİŞİM ALANI (Orijinal Google Sites İçeriği) -->
+    <!-- İLETİŞİM ALANI -->
     <section id="contact" style="background: #0f172a;">
         <h2 class="section-title">Support & Business</h2>
         <div class="contact-grid">
-            <!-- Sitenizdeki Resmi Destek E-postası -->
             <div class="contact-box">
                 <i class="fa-solid fa-headset"></i>
                 <h4>Support</h4>
                 <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a>
             </div>
-            <!-- Sitenizdeki Resmi Business E-postası -->
+            <div class="contact-box">
+                <i class="fa-solid fa-envelope"></i>
+                <h4>Direct Contact</h4>
+                <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>
+            </div>
             <div class="contact-box">
                 <i class="fa-solid fa-briefcase"></i>
                 <h4>Business</h4>
@@ -151,7 +211,7 @@
         </div>
     </section>
 
-    <!-- FOOTER (Orijinal Google Sites İçeriği) -->
+    <!-- FOOTER -->
     <footer>
         <p>© 2024 <span>Mblue Game - Onur Uslu</span>. Mblue Game is owned and operated by Onur Uslu. All Rights Reserved.</p>
     </footer>
