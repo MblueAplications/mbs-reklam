@@ -44,6 +44,12 @@
         .game-card h3 { font-size: 26px; color: var(--accent-cyan); margin-bottom: 20px; font-weight: 700; }
         .game-card p { color: var(--text-muted); margin-bottom: 35px; font-size: 16px; text-align: justify; }
         
+        /* Modern Ekran Görüntüleri Galerisi */
+        .game-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 35px; }
+        .game-gallery img { width: 100%; height: auto; border-radius: 10px; border: 2px solid rgba(255, 255, 255, 0.1); transition: transform 0.3s, border-color 0.3s; }
+        .game-gallery img:hover { transform: scale(1.04); border-color: var(--accent-cyan); }
+
+        /* Mağaza Butonları */
         .store-buttons { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
         .store-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; transition: all 0.3s; font-size: 15px; }
         .store-btn.playstore { background-color: #2c3e50; opacity: 0.6; cursor: not-allowed; }
@@ -94,7 +100,7 @@
         <h2>Innovative Mobile Gaming Studio</h2>
         <p>At MBlueGame Applications, led by Onur Uslu, we are dedicated to engineering immersive and high-performance mobile games that deliver exceptional entertainment to players worldwide. Our studio is built on the core pillars of artistic creativity, uncompromising quality, and a superior user-centric experience.</p>
         
-        <!-- Orijinal Instagram Linki Entegre Edildi -->
+        <!-- Güncellenmiş Orijinal Instagram Linki -->
         <a href="https://www.instagram.com/mbluegame" target="_blank" class="btn-instagram">
             <i class="fa-brands fa-instagram"></i> Instagram Address
         </a>
@@ -107,21 +113,30 @@
             <h3>MBStress: Boss Rush</h3>
             <p>MBStress: Boss Rush invites players to test their reflexes and strategic thinking skills. Survive against massive boss characters, each with its own unique mechanics. Every battle offers a distinct experience that requires patience and perfect timing. Enjoy the competition while relieving stress with simple graphics and fluid gameplay. Play Store, Palm Store and Amazon Appstore!!</p>
             
+            <!-- Eklenen 4 Adet Oyun İçi Resim Galerisi -->
+            <div class="game-gallery">
+                <img src="https://ibb.co" alt="MBStress Screenshot 1">
+                <img src="https://ibb.co" alt="MBStress Screenshot 2">
+                <img src="https://ibb.co" alt="MBStress Screenshot 3">
+                <img src="https://ibb.co" alt="MBStress Screenshot 4">
+            </div>
+
             <div class="store-buttons">
+                <!-- Aktif ve Güncel Mağaza Linkleri -->
                 <a href="#" class="store-btn playstore" onclick="return false;">
                     <i class="fa-brands fa-google-play"></i> Play Store ( Coming Soon )
                 </a>
-                <a href="https://palmstoreapp.com" target="_blank" class="store-btn palmstore">
+                <a href="https://www.palmplaystore.com/detail/com.onur.mbs_vfinal_yeni" target="_blank" class="store-btn palmstore">
                     <i class="fa-solid fa-gamepad"></i> Palm Store
                 </a>
-                <a href="https://amazon.com" target="_blank" class="store-btn amazon">
+                <a href="https://www.amazon.com/gp/product/B0GZW1LKVN" target="_blank" class="store-btn amazon">
                     <i class="fa-brands fa-amazon"></i> Amazon Appstore
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- GÖNDERDİĞİNİZ EKSİKSİZ ABOUT US METNİ -->
+    <!-- ABOUT US BÖLÜMÜ -->
     <section id="about" style="background: #0f172a;">
         <h2 class="section-title">About Us</h2>
         <div class="content-block">
@@ -139,7 +154,7 @@
         </div>
     </section>
 
-    <!-- GÖNDERDİĞİNİZ EKSİKSİZ PRIVACY POLICY METNİ -->
+    <!-- PRIVACY POLICY BÖLÜMÜ -->
     <section id="privacy">
         <h2 class="section-title">Privacy Policy</h2>
         <div class="content-block">
@@ -163,7 +178,7 @@
             <p>The Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the privacy policies of the third-party service providers used by the Application:</p>
             <ul>
                 <li><a href="https://google.com" target="_blank">Google Play Services</a></li>
-                <li><a href="#" target="_blank">Palm Store</a></li>
+                <li><a href="https://www.palmplaystore.com" target="_blank">Palm Store</a></li>
                 <li><a href="https://amazon.com" target="_blank">Amazon Appstore</a></li>
                 <li><a href="https://google.com" target="_blank">AdMob</a></li>
                 <li><a href="https://inmobi.com" target="_blank">Inmobi</a></li>
