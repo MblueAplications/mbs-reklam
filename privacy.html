@@ -3,79 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Mblue Game</title>
-    <link rel="preconnect" href="https://googleapis.com"><link rel="preconnect" href="https://gstatic.com" crossorigin><link href="https://googleapis.com/css2?family=Orbitron:wght@500;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Privacy Policy | Mblue Game Official</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Orbitron:wght@500;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
     <style>
-        :root { --bg-main: #030611; --bg-surface: rgba(10, 17, 40, 0.7); --neon-cyan: #00f0ff; --text-pure: #ffffff; --text-body: #cbd5e1; }
+        :root {
+            --bg-main: #050814;
+            --bg-surface: rgba(13, 20, 41, 0.6);
+            --neon-cyan: #00f0ff;
+            --text-pure: #ffffff;
+            --text-body: #a0aec0;
+            --glass-border: rgba(0, 240, 255, 0.15);
+        }
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg-main); color: var(--text-pure); line-height: 1.7; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, #0c2046 0%, transparent 60%); z-index: -1; }
-        header { background: rgba(3, 6, 17, 0.85); backdrop-filter: blur(15px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 240, 255, 0.1); }
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 800; color: var(--text-pure); }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-main); color: var(--text-pure); line-height: 1.7; overflow-x: hidden; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, #002244 0%, transparent 50%); z-index: -1; }
+
+        header { background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 2px; color: var(--text-pure); text-shadow: 0 0 10px rgba(0,240,255,0.3); }
         .logo span { color: var(--neon-cyan); }
-        nav a { color: var(--text-body); text-decoration: none; margin-left: 30px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; }
-        nav a:hover, nav a.active { color: var(--neon-cyan); }
-        section { padding: 100px 8%; max-width: 1000px; margin: 0 auto; }
-        .section-title { font-family: 'Orbitron', sans-serif; font-size: 38px; text-align: center; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
-        .section-title span { color: var(--neon-cyan); text-shadow: 0 0 20px rgba(0,240,255,0.6); }
-        .content-block { background: var(--bg-surface); backdrop-filter: blur(16px); padding: 50px; border-radius: 24px; border: 1px solid rgba(0, 240, 255, 0.2); box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
-        h3 { font-family: 'Orbitron', sans-serif; color: var(--neon-cyan); margin-top: 35px; margin-bottom: 15px; font-size: 22px; letter-spacing: 0.5px; }
-        p { color: var(--text-body); font-size: 16px; margin-bottom: 25px; text-align: justify; }
-        ul { color: var(--text-body); font-size: 16px; margin-bottom: 25px; padding-left: 20px; }
-        li { margin-bottom: 12px; }
-        a { color: var(--neon-cyan); text-decoration: none; font-weight: 600; }
-        a:hover { text-decoration: underline; }
-        footer { background: #010307; text-align: center; padding: 40px; font-size: 13px; color: var(--text-body); border-top: 1px solid rgba(0, 240, 255, 0.1); margin-top: 100px; }
+        
+        .nav-container { display: flex; align-items: center; gap: 30px; }
+        nav a { color: var(--text-body); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; margin-left: 20px; }
+        nav a:hover, nav a.active { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
+
+        /* Dil Değiştirme Buton Stilleri */
+        .lang-switcher { display: flex; gap: 8px; border: 1px solid var(--glass-border); padding: 4px; border-radius: 6px; background: rgba(0,0,0,0.3); }
+        .lang-btn { background: transparent; border: none; color: var(--text-body); padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
+        .lang-btn:hover { color: var(--text-pure); }
+        .lang-btn.active { background: var(--neon-cyan); color: #000; box-shadow: 0 0 10px rgba(0,240,255,0.4); }
+
+        section { padding: 100px 8%; max-width: 1100px; margin: 0 auto; }
+        .section-title { font-family: 'Orbitron', sans-serif; font-size: 36px; text-align: center; margin-bottom: 50px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+        .section-title span { color: var(--neon-cyan); text-shadow: 0 0 15px rgba(0,240,255,0.5); }
+
+        .content-block { background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 50px; border-radius: 24px; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+        .content-block h3 { font-family: 'Orbitron', sans-serif; color: var(--neon-cyan); margin-top: 40px; margin-bottom: 15px; font-size: 20px; font-weight: 700; letter-spacing: 1px; border-bottom: 1px solid rgba(0, 240, 255, 0.1); padding-bottom: 8px; }
+        .content-block h3:first-of-type { margin-top: 0; }
+        .content-block p { color: var(--text-body); font-size: 15px; margin-bottom: 25px; text-align: justify; }
+        .content-block ul { color: var(--text-body); font-size: 15px; margin-bottom: 25px; padding-left: 25px; }
+        .content-block li { margin-bottom: 12px; text-align: justify; }
+        .content-block a { color: var(--neon-cyan); text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .content-block a:hover { text-shadow: 0 0 8px var(--neon-cyan); text-decoration: underline; }
+
+        /* Gizleme Sınıfı */
+        .lang-section { display: none; }
+        .lang-section.active-lang { display: block; }
+
+        footer { background: #02040a; text-align: center; padding: 40px; font-size: 13px; color: var(--text-body); border-top: 1px solid rgba(255,255,255,0.05); margin-top: 80px; }
+        footer span { color: var(--text-pure); font-weight: 600; }
     </style>
 </head>
 <body>
+
     <header>
         <div class="logo">MBLUE<span>GAME</span></div>
-        <nav><a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html" class="active">Privacy</a></nav>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html" id="menu-home">Home</a>
+                <a href="about.html" id="menu-about">About</a>
+                <a href="privacy.html" class="active" id="menu-privacy">Privacy</a>
+            </nav>
+            <!-- Dil Butonları -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="switchLanguage('tr')">TR</button>
+            </div>
+        </div>
     </header>
+
     <section>
-        <h2 class="section-title">Legal & <span>Privacy</span></h2>
+        <h2 class="section-title" id="page-title">Legal & <span>Privacy</span></h2>
+        
         <div class="content-block">
-            <p>This privacy policy applies to the MBStress: Boss Rush app (hereinafter referred to as "Application") for mobile devices. The Application was developed by Onur Uslu under the brand MBlueGame Applications (hereinafter referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
             
-            <h3>Information Collection and Use</h3>
-            <p>The Application collects information when you download and use it. This information may include:</p>
-            <ul>
-                <li>Your device's Internet Protocol address (e.g., IP address)</li>
-                <li>The pages of the Application that you visit, the time and date of your visit, and the time spent on those pages</li>
-                <li>The total time spent on the Application</li>
-                <li>The operating system used on your mobile device</li>
-            </ul>
-            <p>The Application does not collect precise information about the location of your mobile device.</p>
-            <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
-            <p>The Service Provider may use the information you provided to contact you from time to time to provide you with important information, required notices, and marketing promotions.</p>
-            <p>For a better experience, while using the Application, the Service Provider may require you to provide certain personally identifiable information. The information that the Service Provider requests will be retained and used as described in this privacy policy.</p>
+            <!-- İNGİLİZCE DETAYLI METİN (ENGLISH FULL VERSION) -->
+            <div id="lang-en" class="lang-section active-lang">
+                <p>This privacy policy applies to the MBStress: Boss Rush app (hereinafter referred to as "Application") for mobile devices. The Application was developed by Onur Uslu under the brand MBlueGame Applications (hereinafter referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
+                
+                <h3>Information Collection and Use</h3>
+                <p>The Application collects information when you download and use it. This information may include:</p>
+                <ul>
+                    <li>Your device's Internet Protocol address (e.g., IP address)</li>
+                    <li>The pages of the Application that you visit, the time and date of your visit, and the time spent on those pages</li>
+                    <li>The total time spent on the Application</li>
+                    <li>The operating system used on your mobile device</li>
+                </ul>
+                <p>The Application does not collect precise information about the location of your mobile device.</p>
+                <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
+                <p>The Service Provider may use the information you provided to contact you from time to time to provide you with important information, required notices, and marketing promotions.</p>
+                <p>For a better experience, while using the Application, the Service Provider may require you to provide certain personally identifiable information. The information that the Service Provider requests will be retained and used as described in this privacy policy.</p>
 
-            <h3>Third Party Access</h3>
-            <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways described in this privacy statement.</p>
-            <p>The Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the privacy policies of the third-party service providers used by the Application:</p>
-            <ul>
-                <li><a href="https://google.com" target="_blank">Google Play Services</a></li>
-                <li><a href="https://palmplaystore.com" target="_blank">Palm Store</a></li>
-                <li><a href="https://amazon.com" target="_blank">Amazon Appstore</a></li>
-                <li><a href="https://google.com" target="_blank">AdMob</a></li>
-                <li><a href="https://inmobi.com" target="_blank">Inmobi</a></li>
-            </ul>
+                <h3>Third Party Access</h3>
+                <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways described in this privacy statement.</p>
+                <p>The Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the privacy policies of the third-party service providers used by the Application:</p>
+                <ul>
+                    <li><a href="https://google.com" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play Services</a></li>
+                    <li><a href="https://palmplaystore.com" target="_blank"><i class="fa-solid fa-gamepad"></i> Palm Store</a></li>
+                    <li><a href="https://amazon.com" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon Appstore</a></li>
+                    <li><a href="https://google.com" target="_blank"><i class="fa-solid fa-rectangle-ad"></i> AdMob</a></li>
+                    <li><a href="https://inmobi.com" target="_blank"><i class="fa-solid fa-chart-line"></i> Inmobi</a></li>
+                </ul>
 
-            <h3>Opt-out Rights</h3>
-            <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall processes available as part of your mobile device or via the mobile application marketplace or network.</p>
+                <h3>Opt-out Rights</h3>
+                <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall processes available as part of your mobile device or via the mobile application marketplace or network.</p>
 
-            <h3>Data Retention Policy</h3>
-            <p>The Service Provider (Onur Uslu) will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. If you’d like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>.</p>
+                <h3>Data Retention Policy</h3>
+                <p>The Service Provider (Onur Uslu) will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. If you’d like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>.</p>
 
-            <h3>Children</h3>
-            <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13. The Application does not address anyone under the age of 13. If the Service Provider discovers that a child under 13 has provided personal information, they will immediately delete this from their servers.</p>
+                <h3>Children</h3>
+                <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13. The Application does not address anyone under the age of 13. If the Service Provider discovers that a child under 13 has provided personal information, they will immediately delete this from their servers.</p>
 
-            <h3>Security</h3>
-            <p>The Service Provider is concerned about safeguarding the confidentiality of your information. Physical, electronic, and procedural safeguards are provided to protect the information processed and maintained.</p>
+                <h3>Security</h3>
+                <p>The Service Provider is concerned about safeguarding the confidentiality of your information. Physical, electronic, and procedural safeguards are provided to protect the information processed and maintained.</p>
 
-            <h3>Changes</h3>
-            <p>This Privacy Policy may be updated from time to time. The Service Provider will notify you of any changes by updating this page with the new Privacy Policy. This policy is effective as of 2026-05-09.</p>
+                <h3>Changes</h3>
+                <p>This Privacy Policy may be updated from time to time. The Service Provider will notify you of any changes by updating this page with the new Privacy Policy. This policy is effective as of 2026-05-09.</p>
 
-            <h3>Contact Us</h3>
-            <p>If you have any questions regarding privacy while using the Application, please contact Onur Uslu via email at <a href="mailto:usluonur88@gmail.com">
+                <h3>Contact Us</h3>
+                <p>If you have any questions regarding privacy while using the Application, please contact Onur Uslu via email at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>, <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a> and <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a>.</p>
+            </div>
+
+            <!-- TÜRKÇE DETAYLI METİN (TURKISH FULL VERSION) -->
+            <div id="lang-tr" class="lang-section">
+                <p>Bu gizlilik politikası, mobil cihazlar için geliştirilen MBStress: Boss Rush uygulaması (bundan sonra "Uygulama" olarak anılacaktır) için geçerlidir. Uygulama, MBlueGame Applications markası altında Onur Uslu (bundan sonra "Hizmet Sağlayıcı" olarak anılacaktır) tarafından Reklam Destekli bir hizmet olarak geliştirilmiştir. Bu hizmet "OLDUĞU GİBİ" kullanım için tasarlanmıştır.</p>
+                
+                <h3>Bilgi Toplama ve Kullanımı</h3>
+                <p>Uygulama, indirdiğinizde ve kullandığınızda bilgi toplar. Bu bilgiler şunları içerebilir:</p>
+                <ul>
+                    <li>Cihazınızın İnternet Protokol adresi (örn. IP adresi)</li>
+                    <li>Uygulama içinde ziyaret ettiğiniz sayfalar, ziyaretinizin saati ve tarihi ile bu sayfalarda geçirilen süre</li>
+                    <li>Uygulamada geçirilen toplam süre</li>
+                    <li>Mobil cihazınızda kullanılan işletim sistemi</li>
+                </ul>
+                <p>Uygulama, mobil cihazınızın kesin konum bilgisine ait verileri toplamaz.</p>
+                <p>Uygulama, verilerinizi işlemek veya özellikler sunmak amacıyla Yapay Zeka (AI) teknolojileri kullanmamaktadır.</p>
+                <p>Hizmet Sağlayıcı, sağladığınız bilgileri zaman zaman sizinle iletişim kurmak, önemli bilgileri, zorunlu bildirimleri ve pazarlama promosyonlarını iletmek amacıyla kullanabilir.</p>
+                <p>Daha iyi bir deneyim için, Uygulamayı kullanırken Hizmet Sağlayıcı belirli kişisel olarak tanımlanabilir bilgileri sağlamanızı talep edebilir. Talep edilen bilgiler, bu gizlilik politikasında açıklandığı şekilde saklanacak ve kullanılacaktır.</p>
+
+                <h3>Üçüncü Taraf Erişimi</h3>
+                <p>Hizmet Sağlayıcıya Uygulamayı ve hizmetlerini geliştirme konusunda yardımcı olmak amacıyla, yalnızca toplu ve anonimleştirilmiş veriler periyodik olarak harici hizmetlere aktarılır. Hizmet Sağlayıcı, bilgilerinizi bu gizlilik beyanında açıklanan şekillerde üçüncü taraflarla paylaşabilir.</p>
+                <p>Uygulama, verileri işleme konusunda kendi Gizlilik Politikalarına sahip olan üçüncü taraf hizmetleri kullanır. Uygulama tarafından kullanılan üçüncü taraf hizmet sağlayıcılarının gizlilik politikası bağlantıları aşağıdadır:</p>
+                <ul>
+                    <li><a href="https://google.com" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play Servisleri</a></li>
+                    <li><a href="https://palmplaystore.com" target="_blank"><i class="fa-solid fa-gamepad"></i> Palm Store</a></li>
+                    <li><a href="https://amazon.com" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon Uygulama Mağazası</a></li>
+                    <li><a href="https://google.com" target="_blank"><i class="fa-solid fa-rectangle-ad"></i> AdMob</a></li>
+                    <li><a href="https://inmobi.com" target="_blank"><i class="fa-solid fa-chart-line"></i> Inmobi</a></li>
+                </ul>
+
+                <h3>Devre Dışı Bırakma (Opt-out) Hakları</h3>
+                <p>Uygulamayı cihazınızdan kaldırarak Uygulama tarafından yapılan tüm bilgi toplanmasını kolayca durdurabilirsiniz. Mobil cihazınızın bir parçası olarak veya mobil uygulama mağazası ya da ağı üzerinden sunulan standart kaldırma işlemlerini kullanabilirsiniz.</p>
+
+                <h3>Veri Saklama Politikası</h3>
+                <p>Hizmet Sağlayıcı (Onur Uslu), Kullanıcı tarafından Sağlanan verileri Uygulamayı kullandığınız sürece ve sonrasında makul bir süre boyunca saklayacaktır. Uygulama aracılığıyla sağlamış olduğunuz Kullanıcı Tarafından Sağlanan Verilerin silinmesini istiyorsanız, lütfen <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a> adresinden iletişime geçin.</p>
+
+                <h3>Çocuklar</h3>
+                <p>Hizmet Sağlayıcı, Uygulamayı 13 yaşın altındaki çocuklardan bilerek veri talep etmek veya onlara pazarlama yapmak amacıyla kullanmaz. Uygulama 13 yaşın altındaki hiç kimseye hitap etmemektedir. Hizmet Sağlayıcı, 13 yaşından küçük bir çocuğun kişisel bilgi sağladığını fark ederse, bunu derhal sunucularından silecektir.</p>
+
+                <h3>Güvenlik</h3>
+                <p>Hizmet Sağlayıcı, bilgilerinizin gizliliğini koruma konusunda hassasiyet göstermektedir. İşlenen ve sürdürülen bilgileri korumak amacıyla fiziksel, elektronik ve prosedürel güvenceler sağlanmaktadır.</p>
+
+                <h3>Değişiklikler</h3>
+                <p>Bu Gizlilik Politikası zaman zaman güncellenebilir. Hizmet Sağlayıcı, yeni Gizlilik Politikasını bu sayfada güncelleyerek herhangi bir değişikliği size bildirecektir. Bu politika 2026-05-09 tarihinden itibaren geçerlidir.</p>
+
+                <h3>Bize Ulaşın</h3>
+                <p>Uygulamayı kullanırken gizlilikle ilgili herhangi bir sorunuz olursa, lütfen Onur Uslu ile <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>, <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a> ve <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a> e-posta adresleri üzerinden iletişime geçin.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 <span id="footer-text">Mblue Game - Onur Uslu. All rights reserved. Managed globally by Onur Uslu.</span></p>
+    </footer>
+
+    <!-- Çeviriyi Yapan Akıllı JavaScript Kodu -->
+    <script>
+        function switchLanguage(lang) {
+            // Buton aktiflik durumlarını güncelle
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Metin bloklarını gizle/göster
+            document.querySelectorAll('.lang-section').forEach(section => section.classList.remove('active-lang'));
+            document.getElementById('lang-' + lang).style.display = 'none'; // reset default grid/block bugs
+            
+            const selectedSection = document.getElementById('lang-' + lang);
+            selectedSection.classList.add('active-lang');
+            selectedSection.style.display = 'block';
+
+            // Menü ve kalıcı başlıkları çevir
+            if(lang === 'tr') {
+                document.getElementById('page-title').innerHTML = "Yasal & <span>Gizlilik</span>";
+                document.getElementById('menu-home').innerText = "Ana Sayfa";
+                document.getElementById('menu-about').innerText = "Hakkımızda";
+                document.getElementById('menu-privacy').innerText = "Gizlilik";
+                document.getElementById('footer-text').innerText = "Mblue Game - Onur Uslu. Tüm hakları saklıdır. Onur Uslu tarafından yönetilmektedir.";
+            } else {
+                document.getElementById('page-title').innerHTML = "Legal & <span>Privacy</span>";
+                document.getElementById('menu-home').innerText = "Home";
+                document.getElementById('menu-about').innerText = "About";
+                document.getElementById('menu-privacy').innerText = "Privacy";
+                document.getElementById('footer-text').innerText = "Mblue Game - Onur Uslu. All rights reserved. Managed globally by Onur Uslu.";
+            }
+        }
+    </script>
+
+</body>
+</html>
