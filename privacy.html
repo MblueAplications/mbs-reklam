@@ -13,17 +13,24 @@
     <style>
         :root {
             --bg-main: #050814;
-            --bg-surface: rgba(13, 20, 41, 0.6);
+            --bg-surface: rgba(13, 20, 41, 0.65);
             --neon-cyan: #00f0ff;
             --text-pure: #ffffff;
-            --text-body: #a0aec0;
-            --glass-border: rgba(0, 240, 255, 0.15);
+            --text-body: #cbd5e1;
+            --glass-border: rgba(0, 240, 255, 0.2);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-main); color: var(--text-pure); line-height: 1.7; overflow-x: hidden; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, #002244 0%, transparent 50%); z-index: -1; }
+        
+        /* Yeni Nesil Arka Plan Resmi Entegrasyonu (arkaplan3.avif) */
+        body { 
+            background: url('./arkaplan3.avif') no-repeat center center fixed; 
+            background-size: cover; 
+            color: var(--text-pure); 
+            line-height: 1.7; 
+            overflow-x: hidden; 
+        }
 
         header { background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 2px; color: var(--text-pure); text-shadow: 0 0 10px rgba(0,240,255,0.3); }
@@ -33,8 +40,8 @@
         nav a { color: var(--text-body); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; margin-left: 20px; }
         nav a:hover, nav a.active { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
 
-        /* Dil Değiştirme Buton Stilleri */
-        .lang-switcher { display: flex; gap: 8px; border: 1px solid var(--glass-border); padding: 4px; border-radius: 6px; background: rgba(0,0,0,0.3); }
+        /* Dil Değiştirme Butonları */
+        .lang-switcher { display: flex; gap: 8px; border: 1px solid var(--glass-border); padding: 4px; border-radius: 6px; background: rgba(0,0,0,0.5); }
         .lang-btn { background: transparent; border: none; color: var(--text-body); padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
         .lang-btn:hover { color: var(--text-pure); }
         .lang-btn.active { background: var(--neon-cyan); color: #000; box-shadow: 0 0 10px rgba(0,240,255,0.4); }
@@ -43,7 +50,7 @@
         .section-title { font-family: 'Orbitron', sans-serif; font-size: 36px; text-align: center; margin-bottom: 50px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
         .section-title span { color: var(--neon-cyan); text-shadow: 0 0 15px rgba(0,240,255,0.5); }
 
-        .content-block { background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 50px; border-radius: 24px; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+        .content-block { background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 50px; border-radius: 24px; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
         .content-block h3 { font-family: 'Orbitron', sans-serif; color: var(--neon-cyan); margin-top: 40px; margin-bottom: 15px; font-size: 20px; font-weight: 700; letter-spacing: 1px; border-bottom: 1px solid rgba(0, 240, 255, 0.1); padding-bottom: 8px; }
         .content-block h3:first-of-type { margin-top: 0; }
         .content-block p { color: var(--text-body); font-size: 15px; margin-bottom: 25px; text-align: justify; }
@@ -52,7 +59,6 @@
         .content-block a { color: var(--neon-cyan); text-decoration: none; font-weight: 600; transition: all 0.3s; }
         .content-block a:hover { text-shadow: 0 0 8px var(--neon-cyan); text-decoration: underline; }
 
-        /* Gizleme Sınıfı */
         .lang-section { display: none; }
         .lang-section.active-lang { display: block; }
 
@@ -62,6 +68,7 @@
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <header>
         <div class="logo">MBLUE<span>GAME</span></div>
         <div class="nav-container">
@@ -70,7 +77,6 @@
                 <a href="about.html" id="menu-about">About</a>
                 <a href="privacy.html" class="active" id="menu-privacy">Privacy</a>
             </nav>
-            <!-- Dil Butonları -->
             <div class="lang-switcher">
                 <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
                 <button class="lang-btn" onclick="switchLanguage('tr')">TR</button>
@@ -78,12 +84,13 @@
         </div>
     </header>
 
+    <!-- CONTENT -->
     <section>
         <h2 class="section-title" id="page-title">Legal & <span>Privacy</span></h2>
         
         <div class="content-block">
             
-            <!-- İNGİLİZCE DETAYLI METİN (ENGLISH FULL VERSION) -->
+            <!-- ENGLISH FULL VERSION -->
             <div id="lang-en" class="lang-section active-lang">
                 <p>This privacy policy applies to the MBStress: Boss Rush app (hereinafter referred to as "Application") for mobile devices. The Application was developed by Onur Uslu under the brand MBlueGame Applications (hereinafter referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
                 
@@ -130,7 +137,7 @@
                 <p>If you have any questions regarding privacy while using the Application, please contact Onur Uslu via email at <a href="mailto:usluonur88@gmail.com">usluonur88@gmail.com</a>, <a href="mailto:onur.uslu@petalmail.com">onur.uslu@petalmail.com</a> and <a href="mailto:destek@mbluegame.com.tr">destek@mbluegame.com.tr</a>.</p>
             </div>
 
-            <!-- TÜRKÇE DETAYLI METİN (TURKISH FULL VERSION) -->
+            <!-- TURKISH FULL VERSION -->
             <div id="lang-tr" class="lang-section">
                 <p>Bu gizlilik politikası, mobil cihazlar için geliştirilen MBStress: Boss Rush uygulaması (bundan sonra "Uygulama" olarak anılacaktır) için geçerlidir. Uygulama, MBlueGame Applications markası altında Onur Uslu (bundan sonra "Hizmet Sağlayıcı" olarak anılacaktır) tarafından Reklam Destekli bir hizmet olarak geliştirilmiştir. Bu hizmet "OLDUĞU GİBİ" kullanım için tasarlanmıştır.</p>
                 
@@ -180,26 +187,24 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <p>© 2024 <span id="footer-text">Mblue Game - Onur Uslu. All rights reserved. Managed globally by Onur Uslu.</span></p>
     </footer>
 
-    <!-- Çeviriyi Yapan Akıllı JavaScript Kodu -->
+    <!-- LANGUAGE CONTROL SCRIPT -->
     <script>
         function switchLanguage(lang) {
-            // Buton aktiflik durumlarını güncelle
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            // Metin bloklarını gizle/göster
             document.querySelectorAll('.lang-section').forEach(section => section.classList.remove('active-lang'));
-            document.getElementById('lang-' + lang).style.display = 'none'; // reset default grid/block bugs
+            document.getElementById('lang-' + lang).style.display = 'none';
             
             const selectedSection = document.getElementById('lang-' + lang);
             selectedSection.classList.add('active-lang');
             selectedSection.style.display = 'block';
 
-            // Menü ve kalıcı başlıkları çevir
             if(lang === 'tr') {
                 document.getElementById('page-title').innerHTML = "Yasal & <span>Gizlilik</span>";
                 document.getElementById('menu-home').innerText = "Ana Sayfa";
