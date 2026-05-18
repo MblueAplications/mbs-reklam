@@ -5,21 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Mblue Game Official</title>
     <link rel="preconnect" href="https://googleapis.com"><link rel="preconnect" href="https://gstatic.com" crossorigin><link href="https://googleapis.com/css2?family=Orbitron:wght@500;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        :root { --bg-surface: rgba(5, 8, 20, 0.75); --neon-cyan: #00f0ff; --text-pure: #ffffff; --text-body: #cbd5e1; --glass-border: rgba(0, 240, 255, 0.25); }
+        :root { --bg-main: #050814; --bg-surface: rgba(13, 20, 41, 0.65); --neon-cyan: #00f0ff; --text-pure: #ffffff; --text-body: #cbd5e1; --glass-border: rgba(0, 240, 255, 0.2); }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: url('./arkaplan2.avif') no-repeat center center fixed; background-size: cover; color: var(--text-pure); line-height: 1.7; }
         
-        /* Dinamik Arka Plan Düzenlemesi (arkaplan2.avif) */
-        body { 
-            background: linear-gradient(rgba(5, 8, 20, 0.65), rgba(5, 8, 20, 0.85)), url('./arkaplan2.avif') no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-pure); 
-            line-height: 1.7; 
-        }
-        
-        header { background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0,240,255,0.15); }
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; color: var(--text-pure); }
+        header { background: rgba(5, 8, 20, 0.85); backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: 3px; color: var(--text-pure); animation: logoGlow 2s ease-in-out infinite alternate; }
         .logo span { color: var(--neon-cyan); }
+        @keyframes logoGlow { from { text-shadow: 0 0 5px rgba(0,240,255,0.2); } to { text-shadow: 0 0 15px rgba(0,240,255,0.5); } }
         
         .nav-container { display: flex; align-items: center; gap: 30px; }
         nav a { color: var(--text-body); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; margin-left: 20px; }
