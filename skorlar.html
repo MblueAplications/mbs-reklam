@@ -257,7 +257,7 @@
             switchLanguage(savedLang);
 
             const publicCode = "6a0ec3bf8f40bb17b0c755d4";
-            const secureUrl = `https://dreamlo.com{publicCode}/xml`;
+            const secureUrl = `https://dreamlo.com/lb/${publicCode}/xml`;
 
             try {
                 const response = await fetch(secureUrl);
@@ -277,9 +277,9 @@
                 let htmlContent = "";
 
                 for (let i = 0; i < entries.length; i++) {
-                    const player = entries[i];
+                    const player = entries[i]; // Köşeli parantezler kesin olarak düzeltildi
                     
-                    // KESİN DÜZELTME: [0].textContent şeklinde indeksler tam olarak eklendi
+                    // KESİN ÇÖZÜM: İndeks takıları [0] buraya milimetrik olarak eklendi
                     const rawName = player.getElementsByTagName("name")[0].textContent;
                     const score = player.getElementsByTagName("score")[0].textContent;
 
