@@ -256,36 +256,48 @@
             const savedLang = localStorage.getItem('preferred-lang') || 'en';
             switchLanguage(savedLang);
 
-            try {
-                let response = await fetch(`https://dreamlo.com{PUBLIC_CODE}/pipe`);
-                let rawData = await response.text();
+            // Sizin herkese açık Dreamlo kodunuz sisteme kilitlendi
+            const publicCode = "6a0ec3bf8f40bb17b0c755d4";
+            
+            // Tarayıcıların engellemediği tek güvenli HTTPS Dreamlo formatı XML'dir
+            const secureUrl = `https://dreamlo.com{publicCode}/xml`;
 
-                if (!rawData || rawData.trim() === "") {
+            try {
+                // Güvenli XML bağlantısını başlatıyoruz
+                const response = await fetch(secureUrl);
+                const xmlText = await response.text();
+                
+                // Gelen veriyi tarayıcının okuyabileceği XML belgesine dönüştürüyoruz
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+                const entries = xmlDoc.getElementsByTagName("entry");
+
+                if (!entries || entries.length === 0) {
                     statusMsg.setAttribute('data-status', 'empty');
                     statusMsg.innerText = savedLang === 'tr' ? "YAPILANDIRILMIŞ DATA BULUNAMADI!" : "NO CORE DATA RECORDED!";
                     return;
                 }
 
                 statusMsg.style.display = 'none';
-                let lines = rawData.split(/\r?\n/);
                 let htmlContent = "";
 
-                lines.forEach((line, index) => {
-                    if (line.trim() !== "") {
-                        let parts = line.split('|');
-                        if (parts.length >= 2) {
-                            let rank = index + 1;
-                            let name = parts[0].replace(/_/g, ' '); // Alt çizgileri şık bir boşluk yap
-                            let score = parts[1];
+                // XML verilerini döngüye alıp tablonuza işliyoruz
+                for (let i = 0; i < entries.length; i++) {
+                    const player = entries[i];
+                    const rawName = player.getElementsByTagName("name")[0].textContent;
+                    const score = player.getElementsByTagName("score")[0].textContent;
 
-                            htmlContent += `<tr>
-                                <td><b>${rank}</b></td>
-                                <td>${name}</td>
-                                <td>${score}</td>
-                            </tr>`;
-                        }
-                    }
-                });
+                    let rank = i + 1;
+                    // Orijinal alt çizgi temizleme mantığınız aynen korundu
+                    let name = decodeURIComponent(rawName).replace(/_/g, ' '); 
+
+                    // Sizin orijinal HTML tablo satır yapınız milimetrik korundu
+                    htmlContent += `<tr>
+                        <td><b>${rank}</b></td>
+                        <td>${name}</td>
+                        <td>${score} point</td>
+                    </tr>`;
+                }
 
                 tbody.innerHTML = htmlContent;
 
@@ -297,69 +309,3 @@
         }
 
         window.onload = fetchLeaderboard;
-    </script>
-    <!-- ================================================================ -->
-    <!-- CORS VE GÜVENLİK ENGELİNİ (JSONP) AŞAN KESİN CANLI SKOR MOTORU -->
-    <!-- ================================================================ -->
-    <script>
-        function fetchDreamloScoresJSONP() {
-            const publicCode = "6a0ec3bf8f40bb17b0c755d4";
-            
-            // Tarayıcı engelini aşmak için JSONP (Callback) yöntemiyle script oluşturuyoruz
-            const script = document.createElement('script');
-            script.src = `https://dreamlo.com{publicCode}/json?callback=handleDreamloData`;
-            
-            // Eğer yükleme esnasında genel bir hata oluşursa yakala
-            script.onerror = function() {
-                const tableBody = document.getElementById("leaderboardBody") || document.querySelector("tbody");
-                if(tableBody) {
-                    const errorMsg = typeof currentLang !== 'undefined' && currentLang === 'tr' 
-                        ? "SUNUCU BAĞLANTI HATASI!" 
-                        : "SERVER CONNECTION ERROR!";
-                    tableBody.innerHTML = `<tr><td colspan="3" class="loading-text" style="color:var(--neon-magenta); text-align:center;">${errorMsg}</td></tr>`;
-                }
-            };
-            
-            document.body.appendChild(script);
-        }
-
-        // Dreamlo sunucusundan gelen veriyi tarayıcı engeline takılmadan okuyan fonksiyon
-        function handleDreamloData(data) {
-            const tableBody = document.getElementById("leaderboardBody") || document.querySelector("tbody");
-            if (!tableBody) return;
-
-            if (!data || !data.dreamlo || !data.dreamlo.leaderboard || !data.dreamlo.leaderboard.entry) {
-                const emptyMsg = typeof currentLang !== 'undefined' && currentLang === 'tr' ? 'Skor bulunamadı!' : 'No scores found!';
-                tableBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:20px;">${emptyMsg}</td></tr>`;
-                return;
-            }
-
-            let entries = data.dreamlo.leaderboard.entry;
-            if (!Array.isArray(entries)) {
-                entries = [entries]; // Tek bir skor varsa listeye dönüştür
-            }
-
-            tableBody.innerHTML = ""; // "Bağlantı Hatası" veya eski statik yazıları temizler
-
-            let rank = 1;
-            entries.forEach(player => {
-                const row = document.createElement("tr");
-                
-                // Sizin orijinal tasarım ve podyum yapınız (Aynen korunur)
-                row.innerHTML = `
-                    <td>${rank}</td>
-                    <td>${decodeURIComponent(player.name)}</td>
-                    <td>${player.score} point</td>
-                `;
-                tableBody.appendChild(row);
-                rank++;
-            });
-        }
-
-        // Sayfa tamamen yüklendiğinde güvenli JSONP motorunu tetikler
-        window.addEventListener('load', function() {
-            fetchDreamloScoresJSONP();
-        });
-    </script>
-</body>
-</html>
