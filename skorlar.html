@@ -298,5 +298,44 @@
 
         window.onload = fetchLeaderboard;
     </script>
+    <!-- ================================================================ -->
+    <!-- CANLI SKOR ENTEGRASYON MOTORU (ORİJİNAL TASARIMINIZA DOKUNMAZ) -->
+    <!-- ================================================================ -->
+    <script src="https://dreamlo.com"></script>
+    <script>
+        function displayDreamloLeaderboard() {
+            // Sizin orijinal tbody alanınızı hedef alır
+            const tableBody = document.getElementById("leaderboardBody") || document.querySelector("tbody");
+            
+            if (typeof dreamloLeaderboard === 'undefined' || !dreamloLeaderboard) {
+                return; // Kütüphane yüklenmediyse tasarımı bozma
+            }
+
+            const scoresArray = dreamloLeaderboard.getBestScores();
+            
+            if (scoresArray && scoresArray.length > 0) {
+                tableBody.innerHTML = ""; // Eski/statik test verilerini temizler
+
+                let rank = 1;
+                scoresArray.forEach(player => {
+                    const row = document.createElement("tr");
+                    
+                    // Sizin css dosyanızdaki podyum ve tr stillerini bozmamak için orijinal yapınız korundu
+                    row.innerHTML = `
+                        <td>${rank}</td>
+                        <td>${decodeURIComponent(player.name)}</td>
+                        <td>${player.score} point</td>
+                    `;
+                    tableBody.appendChild(row);
+                    rank++;
+                });
+            }
+        }
+
+        // Sayfa açıldığında sizin tüm scriptlerinizle birlikte senkronize çalışır
+        window.addEventListener('load', function() {
+            setTimeout(displayDreamloLeaderboard, 400);
+        });
+    </script>
 </body>
 </html>
