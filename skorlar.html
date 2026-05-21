@@ -277,8 +277,9 @@
                 let htmlContent = "";
 
                 for (let i = 0; i < entries.length; i++) {
-                    // DOĞRU PARANTEZ VE KÜÇÜK HARF DÜZELTMELERİ YAPILDI
                     const player = entries[i];
+                    
+                    // KESİN DÜZELTME: [0].textContent şeklinde indeksler tam olarak eklendi
                     const rawName = player.getElementsByTagName("name")[0].textContent;
                     const score = player.getElementsByTagName("score")[0].textContent;
 
