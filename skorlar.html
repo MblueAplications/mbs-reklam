@@ -1,1 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard | Mblue Game Official</title>
+    
+    <!-- GOOGLE SEO OPTİMİZASYONU -->
+    <meta name="description" content="Live high score rankings and leaderboard for MBStress: Boss Rush by Mblue Game studio.">
+    <meta name="robots" content="index, follow">
 
+    <!-- TARAYICI SEKME SİMGESİ -->
+    <link rel="icon" type="image/jpeg" href="./logo.jpg">
+    <link rel="apple-touch-icon" href="./logo.jpg">
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        :root {
+            --bg-main: #03050c;
+            --bg-surface: rgba(4, 8, 20, 0.9);
+            --neon-cyan: #00f0ff;
+            --neon-magenta: #ff0055;
+            --neon-green: #00ff88;
+            --text-pure: #ffffff;
+            --text-body: #e2e8f0;
+            --glass-border: rgba(0, 240, 255, 0.3);
+            --neon-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            background: linear-gradient(rgba(3, 5, 12, 0.8), rgba(3, 5, 12, 0.8)), url('./arkaplan2.webp') no-repeat center center fixed; 
+            background-size: cover; 
+            color: var(--text-pure); 
+            line-height: 1.7; 
+            overflow-x: hidden; 
+            position: relative;
+        }
+
+        /* HAREKETLİ SİBER PARÇACIKLAR EFFECTS */
+        .bg-particles {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: -1; overflow: hidden;
+        }
+        .particle {
+            position: absolute; display: block; border-radius: 50%;
+            background: rgba(0, 240, 255, 0.15);
+            bottom: -20px; animation: floatUp 12s infinite linear;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-105vh) scale(0.5); opacity: 0; }
+        }
+
+        /* Modern Üst Menü */
+        header { background: rgba(3, 5, 12, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 240, 255, 0.2); box-shadow: 0 5px 20px rgba(0, 240, 255, 0.1); }
+        
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 3px; color: var(--text-pure); text-shadow: 0 0 10px rgba(0,240,255,0.4); display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--neon-cyan); font-size: 20px; animation: pulse 2s infinite alternative; }
+        .logo span { background: linear-gradient(135deg, var(--neon-cyan), #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        @keyframes pulse { from { text-shadow: 0 0 5px var(--neon-cyan); } to { text-shadow: 0 0 15px var(--neon-cyan); } }
+        
+        .nav-container { display: flex; align-items: center; gap: 30px; }
+        nav a { color: var(--text-body); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; margin-left: 20px; }
+        nav a:hover, nav a.active { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
+
+        .lang-switcher { display: flex; gap: 8px; border: 1px solid var(--glass-border); padding: 4px; border-radius: 6px; background: rgba(0,0,0,0.6); box-shadow: 0 0 10px rgba(0, 240, 255, 0.2); }
+        .lang-btn { background: transparent; border: none; color: var(--text-body); padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
+        .lang-btn:hover { color: var(--text-pure); }
+        .lang-btn.active { background: var(--neon-cyan); color: #000; box-shadow: 0 0 12px rgba(0,240,255,0.6); }
+
+        section { padding: 80px 8%; max-width: 900px; margin: 0 auto; position: relative; z-index: 5; }
+        
+        /* Başlık Alanı ve Neon Animasyonları */
+        .lang-title-section { display: none; text-align: center; margin-bottom: 40px; }
+        .lang-title-section.active-lang { display: block; }
+        .section-title { font-family: 'Orbitron', sans-serif; font-size: 42px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; animation: neonFlicker 3s infinite alternate; color: var(--text-pure); }
+        .section-title span { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan), 0 0 30px var(--neon-cyan); }
+        .section-subtitle { color: var(--text-body); opacity: 0.8; font-size: 15px; font-weight: 500; letter-spacing: 1px; margin-top: 5px; }
+
+        @keyframes neonFlicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: 0 0 4px #fff, 0 0 10px var(--neon-magenta), 0 0 20px var(--neon-magenta); }
+            20%, 24%, 55% { text-shadow: none; }
+        }
+
+        /* Neon Işıklı Tablo Paneli */
+        .content-block { 
+            background: var(--bg-surface); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px); 
+            padding: 30px; 
+            border-radius: 20px; 
+            border: 1px solid var(--neon-cyan); 
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
+            position: relative;
+        }
+
+        /* Köşelerdeki Neon Yapay Zeka Detayları */
+        .content-block::before {
+            content: ''; position: absolute; top: -2px; left: -2px; width: 30px; height: 30px; border-top: 3px solid var(--neon-magenta); border-left: 3px solid var(--neon-magenta); border-radius: 20px 0 0 0; box-shadow: -5px -5px 10px rgba(255, 0, 85, 0.4);
+        }
+        .content-block::after {
+            content: ''; position: absolute; bottom: -2px; right: -2px; width: 30px; height: 30px; border-bottom: 3px solid var(--neon-magenta); border-right: 3px solid var(--neon-magenta); border-radius: 0 0 20px 0; box-shadow: 5px 5px 10px rgba(255, 0, 85, 0.4);
+        }
+        
+        /* Tablo Detayları */
+        .table-container { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: separate; border-spacing: 0 8px; text-align: center; }
+        
+        th { font-family: 'Orbitron', sans-serif; background: rgba(0, 240, 255, 0.08); color: var(--neon-cyan); padding: 18px; font-weight: 800; letter-spacing: 2px; font-size: 14px; border-bottom: 2px solid var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.6); text-transform: uppercase; }
+        
+        td { padding: 16px; background: rgba(255, 255, 255, 0.02); color: var(--text-body); font-weight: 700; font-size: 15px; border-top: 1px solid rgba(0, 240, 255, 0.1); border-bottom: 1px solid rgba(0, 240, 255, 0.1); transition: all 0.2s ease; }
+        td:first-child { border-left: 1px solid rgba(0, 240, 255, 0.1); border-radius: 8px 0 0 8px; font-family: 'Orbitron', sans-serif; }
+        td:last-child { border-right: 1px solid rgba(0, 240, 255, 0.1); border-radius: 0 8px 8px 0; color: var(--neon-green); text-shadow: 0 0 8px rgba(0, 255, 136, 0.4); }
+        
+        /* Satır Seçme Neon Parlama Efekti */
+        tr:hover td { background: rgba(0, 240, 255, 0.08); color: var(--text-pure); border-color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0, 240, 255, 0.2); }
+        
+        /* Podyum Renklendirmeleri (İlk 3 Neon Işığı) */
+        tr:nth-child(1) td:nth-child(1) { color: #ffd700; text-shadow: 0 0 12px #ffd700; font-size: 18px; }
+        tr:nth-child(1) td:nth-child(2) { color: #ffd700; }
+        tr:nth-child(2) td:nth-child(1) { color: #00f0ff; text-shadow: 0 0 12px #00f0ff; font-size: 17px; }
+        tr:nth-child(3) td:nth-child(1) { color: #ff0055; text-shadow: 0 0 12px #ff0055; font-size: 16px; }
+
+        .lang-section { display: none; }
+        .lang-section.active-lang { display: block; }
+        
+        .status-text { font-family: 'Orbitron', sans-serif; text-align: center; padding: 40px; color: var(--neon-cyan); font-weight: 800; letter-spacing: 2px; font-size: 16px; text-shadow: 0 0 10px var(--neon-cyan); animation: pulseText 1.5s infinite alternate; }
+        @keyframes pulseText { from { opacity: 0.5; } to { opacity: 1; } }
+
+        footer { background: #02040a; text-align: center; padding: 40px; font-size: 13px; color: var(--text-body); border-top: 1px solid rgba(0, 240, 255, 0.2); margin-top: 80px; box-shadow: 0 -5px 20px rgba(0, 240, 255, 0.05); }
+        footer span { color: var(--neon-cyan); font-weight: 600; text-shadow: 0 0 5px var(--neon-cyan); }
+    </style>
+</head>
+<body>
+
+    <!-- SÜZÜLEN PARÇACIKLAR -->
+    <div class="bg-particles" id="particle-container"></div>
+
+    <!-- ÜST MENÜ -->
+    <header>
+        <div class="logo"><i class="fa-solid fa-gamepad"></i>MBLUE<span>GAME</span></div>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skorlar.html" class="active">Leaderboard</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+            <div class="lang-switcher">
+                <button class="lang-btn active" id="btn-en" onclick="switchLanguage('en')">EN</button>
+                <button class="lang-btn" id="btn-tr" onclick="switchLanguage('tr')">TR</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- BAŞLIK ALANLARI (DİL BAZLI VE NEON FLU) -->
+    <section>
+        <div id="title-en" class="lang-title-section active-lang">
+            <h2 class="section-title">Global <span>Leaderboard</span></h2>
+            <p class="section-subtitle">LIVE MATRIX METRICS OF MBSTRESS: BOSS RUSH</p>
+        </div>
+        <div id="title-tr" class="lang-title-section">
+            <h2 class="section-title">Küresel <span>Skor Tablosu</span></h2>
+            <p class="section-subtitle">MBSTRESS: BOSS RUSH ANLIK SKOR VERİLERİ</p>
+        </div>
+
+        <!-- SİBERPUNK SKOR PANELİ -->
+        <div class="content-block">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <!-- EN TABLO BAŞLIĞI -->
+                        <tr id="th-en" class="lang-section active-lang">
+                            <th>Rank</th>
+                            <th>Player Identity</th>
+                            <th>High Score</th>
+                        </tr>
+                        <!-- TR TABLO BAŞLIĞI -->
+                        <tr id="th-tr" class="lang-section">
+                            <th>Sıra</th>
+                            <th>Oyuncu Kimliği</th>
+                            <th>En Yüksek Skor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-rows">
+                        <!-- Veriler arka plandan çekilip dolacak -->
+                    </tbody>
+                </table>
+                <div id="status-msg" class="status-text">INITIALIZING NETWORKS...</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <span>Mblue Game</span>. All Rights Reserved. Cyber System Designed by Onur Uslu.</p>
+    </footer>
+
+    <script>
+        const PUBLIC_CODE = "5fa8af5feb371a09c4c51d17";
+
+        // Parçacık Efekti
+        function createParticles() {
+            const container = document.getElementById('particle-container');
+            const particleCount = 25;
+            for(let i = 0; i<particleCount; i++) {
+                let particle = document.createElement('span');
+                particle.classList.add('particle');
+                let size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = Math.random() * 6 + 8 + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Çift Dil Kontrol Mekanizması
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if(lang === 'en') document.getElementById('btn-en').classList.add('active');
+            if(lang === 'tr') document.getElementById('btn-tr').classList.add('active');
+
+            document.querySelectorAll('.lang-title-section, .lang-section').forEach(el => el.classList.remove('active-lang'));
+            document.getElementById('title-' + lang).classList.add('active-lang');
+            document.getElementById('th-' + lang).classList.add('active-lang');
+
+            const statusMsg = document.getElementById('status-msg');
+            if(statusMsg.style.display !== 'none') {
+                if(statusMsg.getAttribute('data-status') === 'empty') {
+                    statusMsg.innerText = lang === 'tr' ? "YAPILANDIRILMIŞ DATA BULUNAMADI!" : "NO CORE DATA RECORDED!";
+                } else if(statusMsg.getAttribute('data-status') === 'error') {
+                    statusMsg.innerText = lang === 'tr' ? "SUNUCU BAĞLANTI HATASI!" : "MAINFRAME DISCONNECTED!";
+                } else {
+                    statusMsg.innerText = lang === 'tr' ? "VERİLER SENKRONİZE EDİLİYOR..." : "SYNCHRONIZING METRICS...";
+                }
+            }
+            localStorage.setItem('preferred-lang', lang);
+        }
+
+        // Dreamlo Veri Akışı Entegrasyonu
+        async function fetchLeaderboard() {
+            const tbody = document.getElementById('leaderboard-rows');
+            const statusMsg = document.getElementById('status-msg');
+            const savedLang = localStorage.getItem('preferred-lang') || 'en';
+            switchLanguage(savedLang);
+
+            try {
+                let response = await fetch(`https://dreamlo.com{PUBLIC_CODE}/pipe`);
+                let rawData = await response.text();
+
+                if (!rawData || rawData.trim() === "") {
+                    statusMsg.setAttribute('data-status', 'empty');
+                    statusMsg.innerText = savedLang === 'tr' ? "YAPILANDIRILMIŞ DATA BULUNAMADI!" : "NO CORE DATA RECORDED!";
+                    return;
+                }
+
+                statusMsg.style.display = 'none';
+                let lines = rawData.split(/\r?\n/);
+                let htmlContent = "";
+
+                lines.forEach((line, index) => {
+                    if (line.trim() !== "") {
+                        let parts = line.split('|');
+                        if (parts.length >= 2) {
+                            let rank = index + 1;
+                            let name = parts[0].replace(/_/g, ' '); // Alt çizgileri şık bir boşluk yap
+                            let score = parts[1];
+
+                            htmlContent += `<tr>
+                                <td><b>${rank}</b></td>
+                                <td>${name}</td>
+                                <td>${score}</td>
+                            </tr>`;
+                        }
+                    }
+                });
+
+                tbody.innerHTML = htmlContent;
+
+            } catch (error) {
+                console.error("Dreamlo Connection Error:", error);
+                statusMsg.setAttribute('data-status', 'error');
+                statusMsg.innerText = savedLang === 'tr' ? "SUNUCU BAĞLANTI HATASI!" : "MAINFRAME DISCONNECTED!";
+            }
+        }
+
+        window.onload = fetchLeaderboard;
+    </script>
+</body>
+</html>
