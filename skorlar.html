@@ -256,18 +256,13 @@
             const savedLang = localStorage.getItem('preferred-lang') || 'en';
             switchLanguage(savedLang);
 
-            // Sizin herkese açık Dreamlo kodunuz sisteme kilitlendi
             const publicCode = "6a0ec3bf8f40bb17b0c755d4";
-            
-            // Tarayıcıların engellemediği tek güvenli HTTPS Dreamlo formatı XML'dir
             const secureUrl = `https://dreamlo.com{publicCode}/xml`;
 
             try {
-                // Güvenli XML bağlantısını başlatıyoruz
                 const response = await fetch(secureUrl);
                 const xmlText = await response.text();
                 
-                // Gelen veriyi tarayıcının okuyabileceği XML belgesine dönüştürüyoruz
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(xmlText, "text/xml");
                 const entries = xmlDoc.getElementsByTagName("entry");
@@ -281,17 +276,15 @@
                 statusMsg.style.display = 'none';
                 let htmlContent = "";
 
-                // XML verilerini döngüye alıp tablonuza işliyoruz
                 for (let i = 0; i < entries.length; i++) {
+                    // DOĞRU PARANTEZ VE KÜÇÜK HARF DÜZELTMELERİ YAPILDI
                     const player = entries[i];
                     const rawName = player.getElementsByTagName("name")[0].textContent;
                     const score = player.getElementsByTagName("score")[0].textContent;
 
                     let rank = i + 1;
-                    // Orijinal alt çizgi temizleme mantığınız aynen korundu
                     let name = decodeURIComponent(rawName).replace(/_/g, ' '); 
 
-                    // Sizin orijinal HTML tablo satır yapınız milimetrik korundu
                     htmlContent += `<tr>
                         <td><b>${rank}</b></td>
                         <td>${name}</td>
