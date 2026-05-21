@@ -299,62 +299,66 @@
         window.onload = fetchLeaderboard;
     </script>
     <!-- ================================================================ -->
-    <!-- GÜVENLİK ENGELİNİ (CORS) AŞAN KESİN CANLI SKOR MOTORU -->
+    <!-- CORS VE GÜVENLİK ENGELİNİ (JSONP) AŞAN KESİN CANLI SKOR MOTORU -->
     <!-- ================================================================ -->
     <script>
-        async function fetchDreamloScores() {
-            // Sizin orijinal tablo gövdenizi yakalar
-            const tableBody = document.getElementById("leaderboardBody") || document.querySelector("tbody");
-            
+        function fetchDreamloScoresJSONP() {
             const publicCode = "6a0ec3bf8f40bb17b0c755d4";
-            // Tarayıcı engelini aşmak için resmi ve güvenli CORS köprüsü kullanıyoruz
-            const proxyUrl = "https://herokuapp.com";
-            const targetUrl = `http://dreamlo.com{publicCode}/json`;
-
-            try {
-                // Köprü üzerinden Dreamlo verilerine güvenli erişim sağlıyoruz
-                const response = await fetch(proxyUrl + targetUrl);
-                const data = await response.json();
-                
-                if (!data.dreamlo || !data.dreamlo.leaderboard || !data.dreamlo.leaderboard.entry) {
-                    tableBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:20px;">No scores found!</td></tr>`;
-                    return;
+            
+            // Tarayıcı engelini aşmak için JSONP (Callback) yöntemiyle script oluşturuyoruz
+            const script = document.createElement('script');
+            script.src = `https://dreamlo.com{publicCode}/json?callback=handleDreamloData`;
+            
+            // Eğer yükleme esnasında genel bir hata oluşursa yakala
+            script.onerror = function() {
+                const tableBody = document.getElementById("leaderboardBody") || document.querySelector("tbody");
+                if(tableBody) {
+                    const errorMsg = typeof currentLang !== 'undefined' && currentLang === 'tr' 
+                        ? "SUNUCU BAĞLANTI HATASI!" 
+                        : "SERVER CONNECTION ERROR!";
+                    tableBody.innerHTML = `<tr><td colspan="3" class="loading-text" style="color:var(--neon-magenta); text-align:center;">${errorMsg}</td></tr>`;
                 }
-
-                let entries = data.dreamlo.leaderboard.entry;
-                if (!Array.isArray(entries)) {
-                    entries = [entries]; // Tek bir skor varsa listeye çevir
-                }
-
-                tableBody.innerHTML = ""; // "Bağlantı Hatası" veya eski statik yazıları temizler
-
-                let rank = 1;
-                entries.forEach(player => {
-                    const row = document.createElement("tr");
-                    
-                    // Sizin orijinal tasarım ve podyum yapınız (Aynen korunur)
-                    row.innerHTML = `
-                        <td>${rank}</td>
-                        <td>${decodeURIComponent(player.name)}</td>
-                        <td>${player.score} point</td>
-                    `;
-                    tableBody.appendChild(row);
-                    rank++;
-                });
-
-            } catch (error) {
-                console.error("Bağlantı Hatası:", error);
-                // Eğer köprüde anlık yoğunluk olursa oyuncuya Türkçe/İngilizce bilgi verir
-                const errorMsg = typeof currentLang !== 'undefined' && currentLang === 'tr' 
-                    ? "SKORLAR YÜKLENEMEDİ, LÜTFEN SAYFAYI YENİLEYİN." 
-                    : "SCORES COULD NOT BE LOADED, PLEASE REFRESH THE PAGE.";
-                tableBody.innerHTML = `<tr><td colspan="3" class="loading-text" style="color:var(--neon-magenta); text-align:center;">${errorMsg}</td></tr>`;
-            }
+            };
+            
+            document.body.appendChild(script);
         }
 
-        // Sayfa açıldığında siber köprüyü tetikler
+        // Dreamlo sunucusundan gelen veriyi tarayıcı engeline takılmadan okuyan fonksiyon
+        function handleDreamloData(data) {
+            const tableBody = document.getElementById("leaderboardBody") || document.querySelector("tbody");
+            if (!tableBody) return;
+
+            if (!data || !data.dreamlo || !data.dreamlo.leaderboard || !data.dreamlo.leaderboard.entry) {
+                const emptyMsg = typeof currentLang !== 'undefined' && currentLang === 'tr' ? 'Skor bulunamadı!' : 'No scores found!';
+                tableBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:20px;">${emptyMsg}</td></tr>`;
+                return;
+            }
+
+            let entries = data.dreamlo.leaderboard.entry;
+            if (!Array.isArray(entries)) {
+                entries = [entries]; // Tek bir skor varsa listeye dönüştür
+            }
+
+            tableBody.innerHTML = ""; // "Bağlantı Hatası" veya eski statik yazıları temizler
+
+            let rank = 1;
+            entries.forEach(player => {
+                const row = document.createElement("tr");
+                
+                // Sizin orijinal tasarım ve podyum yapınız (Aynen korunur)
+                row.innerHTML = `
+                    <td>${rank}</td>
+                    <td>${decodeURIComponent(player.name)}</td>
+                    <td>${player.score} point</td>
+                `;
+                tableBody.appendChild(row);
+                rank++;
+            });
+        }
+
+        // Sayfa tamamen yüklendiğinde güvenli JSONP motorunu tetikler
         window.addEventListener('load', function() {
-            fetchDreamloScores();
+            fetchDreamloScoresJSONP();
         });
     </script>
 </body>
