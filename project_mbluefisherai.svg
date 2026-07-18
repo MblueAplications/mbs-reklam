@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#04101c"/><stop offset=".55" stop-color="#08253a"/><stop offset="1" stop-color="#180d2d"/></linearGradient>
+<linearGradient id="ac" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6ef4ff"/><stop offset=".5" stop-color="#6f9dff"/><stop offset="1" stop-color="#b879ff"/></linearGradient>
+<radialGradient id="rg"><stop stop-color="#69efff" stop-opacity=".28"/><stop offset="1" stop-color="#69efff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1600" height="900" rx="42" fill="url(#bg)"/>
+<circle cx="340" cy="330" r="300" fill="url(#rg)"/>
+<circle cx="1310" cy="120" r="260" fill="#966cff" opacity=".08"/>
+<g opacity=".1" stroke="#a6f8ff"><path d="M0 690C230 620 380 760 610 690s400-135 620-42 280 45 370 10"/><path d="M0 755C210 690 410 820 660 750s390-120 600-40 260 45 340 25"/></g>
+<g transform="translate(330 330)">
+<circle r="210" fill="none" stroke="#6ef2ff" stroke-width="2" opacity=".2"/>
+<circle r="145" fill="none" stroke="#7e9dff" stroke-width="2" opacity=".28"/>
+<circle r="78" fill="none" stroke="#bb82ff" stroke-width="2" opacity=".38"/>
+<path d="M-210 0H210M0-210V210" stroke="#78eeff" opacity=".12"/>
+<path d="M0 0L137-118" stroke="url(#ac)" stroke-width="7" stroke-linecap="round"/>
+<circle cx="118" cy="-83" r="12" fill="#8af7ff"/><circle cx="-92" cy="76" r="9" fill="#bf8cff"/><circle cx="54" cy="126" r="7" fill="#779dff"/>
+</g>
+<g font-family="Arial,sans-serif">
+<text x="95" y="115" fill="#8bf4ff" font-size="18" font-weight="700">MBlueFisherAI</text>
+<text x="95" y="166" fill="#f4fbff" font-size="48" font-weight="700">AI-Powered Fishing Assistant</text>
+<text x="95" y="205" fill="#8ea3b7" font-size="20">Weather • Spot intelligence • Species insights • Fishing data</text>
+</g>
+<g transform="translate(865 55)">
+<rect width="420" height="790" rx="72" fill="#02050a" stroke="#3b5270" stroke-width="4"/>
+<rect x="18" y="18" width="384" height="754" rx="58" fill="#071827"/>
+<rect x="135" y="31" width="150" height="24" rx="12" fill="#02050a"/>
+<text x="48" y="112" fill="#f2fbff" font-family="Arial" font-size="31" font-weight="700">MBlueFisherAI</text>
+<text x="48" y="148" fill="#7ff1ff" font-family="Arial" font-size="15">Fishing intelligence in your pocket</text>
+<circle cx="210" cy="300" r="112" fill="none" stroke="#6defff" stroke-width="2"/>
+<circle cx="210" cy="300" r="74" fill="none" stroke="#7b8eff" stroke-width="2"/>
+<path d="M210 188V412M98 300H322" stroke="#73edff" opacity=".16"/>
+<path d="M210 300L282 226" stroke="url(#ac)" stroke-width="6" stroke-linecap="round"/>
+<circle cx="272" cy="237" r="10" fill="#86f7ff"/>
+<rect x="48" y="452" width="324" height="96" rx="22" fill="#0c2236" stroke="#2a4c66"/>
+<text x="70" y="484" fill="#7df2ff" font-family="Arial" font-size="13" font-weight="700">TODAY'S CONDITIONS</text>
+<text x="70" y="520" fill="#fff" font-family="Arial" font-size="26" font-weight="700">Foça • 86/100</text>
+<rect x="48" y="574" width="324" height="76" rx="22" fill="url(#ac)"/>
+<text x="112" y="620" fill="#07101b" font-family="Arial" font-size="20" font-weight="700">START ANALYSIS</text>
+</g>
+<g font-family="Arial" font-size="16" font-weight="700">
+<g transform="translate(1290 350)"><rect width="210" height="58" rx="18" fill="#0b1726" stroke="#34485f"/><text x="24" y="36" fill="#e4fbff">Weather Data</text></g>
+<g transform="translate(1270 438)"><rect width="235" height="58" rx="18" fill="#0b1726" stroke="#34485f"/><text x="24" y="36" fill="#e4fbff">Spot Intelligence</text></g>
+<g transform="translate(1300 526)"><rect width="195" height="58" rx="18" fill="#0b1726" stroke="#34485f"/><text x="24" y="36" fill="#e4fbff">AI Insights</text></g>
+</g>
+</svg>
