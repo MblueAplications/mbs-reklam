@@ -1,7 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#03131f"/><stop offset=".5" stop-color="#07394a"/><stop offset="1" stop-color="#17183b"/></linearGradient><linearGradient id="sea"><stop stop-color="#52f1ff"/><stop offset=".55" stop-color="#3ca6ff"/><stop offset="1" stop-color="#9d79ff"/></linearGradient></defs>
-<rect width="1600" height="900" rx="40" fill="url(#bg)"/><path d="M0 690C250 600 390 760 650 680s430-100 650-20 230 50 300 25V900H0Z" fill="#041521" opacity=".9"/>
-<g font-family="Arial,sans-serif"><text x="95" y="115" fill="#7ef3ff" font-size="18" font-weight="700">MOBILE GAME • IN DEVELOPMENT</text><text x="95" y="185" fill="white" font-size="68" font-weight="800">Fish of Fortune</text><text x="95" y="235" fill="#9cb7c5" font-size="23">Fishing • Fleet • Business • Progression</text></g>
-<g transform="translate(100 330)" font-family="Arial,sans-serif"><rect width="500" height="92" rx="24" fill="#082b39" stroke="#286377"/><text x="28" y="36" fill="#7df4ff" font-size="15" font-weight="700">EXPLORE</text><text x="28" y="69" fill="white" font-size="27" font-weight="700">Ports, islands and new fishing regions</text><rect y="112" width="500" height="92" rx="24" fill="#082b39" stroke="#286377"/><text x="28" y="148" fill="#7df4ff" font-size="15" font-weight="700">BUILD</text><text x="28" y="181" fill="white" font-size="27" font-weight="700">Grow your fleet, crew and company</text><rect y="224" width="500" height="92" rx="24" fill="#082b39" stroke="#286377"/><text x="28" y="260" fill="#7df4ff" font-size="15" font-weight="700">PROGRESS</text><text x="28" y="293" fill="white" font-size="27" font-weight="700">Catch, earn, upgrade and expand</text></g>
-<g transform="translate(850 245)"><circle cx="260" cy="260" r="250" fill="#062635" stroke="#2b6d80" stroke-width="4"/><circle cx="260" cy="260" r="185" fill="#0a3544" stroke="#378399" stroke-width="3"/><path d="M85 305C145 235 210 240 260 285C320 225 405 230 455 285C405 365 315 390 235 370C170 415 110 390 85 305Z" fill="url(#sea)"/><path d="M440 285L555 220L535 325L585 390L450 355Z" fill="#4cb6e7"/><circle cx="160" cy="295" r="12" fill="#04111a"/><path d="M145 330Q180 352 220 330" fill="none" stroke="#06131c" stroke-width="8" stroke-linecap="round"/><circle cx="260" cy="260" r="275" fill="none" stroke="#65edff" stroke-width="2" opacity=".2"/></g>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#03131f"/><stop offset=".5" stop-color="#07394a"/><stop offset="1" stop-color="#17183b"/></linearGradient>
+<linearGradient id="sea"><stop stop-color="#52f1ff"/><stop offset=".55" stop-color="#3ca6ff"/><stop offset="1" stop-color="#9d79ff"/></linearGradient>
+</defs>
+<rect width="1600" height="900" rx="40" fill="url(#bg)"/>
+<path d="M0 690C250 600 390 760 650 680s430-100 650-20 230 50 300 25V900H0Z" fill="#041521" opacity=".9"/>
+<g font-family="Arial,sans-serif">
+<text x="95" y="115" fill="#7ef3ff" font-size="18" font-weight="700">IN DEVELOPMENT</text>
+<text x="95" y="185" fill="white" font-size="68" font-weight="800">Fish of Fortune</text>
+<text x="95" y="235" fill="#9cb7c5" font-size="23">Fishing • Fleet • Business • Progression</text>
+</g>
+<g transform="translate(100 330)" font-family="Arial,sans-serif">
+<rect width="500" height="92" rx="24" fill="#082b39" stroke="#286377"/>
+<text x="28" y="36" fill="#7df4ff" font-size="15" font-weight="700">EXPLORE</text>
+<text x="28" y="69" fill="white" font-size="27" font-weight="700">Ports, islands and fishing regions</text>
+<rect y="112" width="500" height="92" rx="24" fill="#082b39" stroke="#286377"/>
+<text x="28" y="148" fill="#7df4ff" font-size="15" font-weight="700">BUILD</text>
+<text x="28" y="181" fill="white" font-size="27" font-weight="700">Grow your fleet, crew and company</text>
+<rect y="224" width="500" height="92" rx="24" fill="#082b39" stroke="#286377"/>
+<text x="28" y="260" fill="#7df4ff" font-size="15" font-weight="700">PROGRESS</text>
+<text x="28" y="293" fill="white" font-size="27" font-weight="700">Catch, earn, upgrade and expand</text>
+</g>
+<g transform="translate(880 240)">
+<circle cx="260" cy="260" r="245" fill="#062635" stroke="#2b6d80" stroke-width="4"/>
+<circle cx="260" cy="260" r="180" fill="#0a3544" stroke="#378399" stroke-width="3"/>
+<path d="M90 305C150 235 210 240 260 285C320 225 405 230 455 285C405 365 315 390 235 370C170 415 110 390 90 305Z" fill="url(#sea)"/>
+<path d="M440 285L555 220L535 325L585 390L450 355Z" fill="#4cb6e7"/>
+<circle cx="160" cy="295" r="12" fill="#04111a"/>
+<path d="M145 330Q180 352 220 330" fill="none" stroke="#06131c" stroke-width="8" stroke-linecap="round"/>
+</g>
 </svg>

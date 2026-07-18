@@ -1,10 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#080911"/><stop offset=".5" stop-color="#210b18"/><stop offset="1" stop-color="#071525"/></linearGradient><linearGradient id="hot"><stop stop-color="#ff4f70"/><stop offset="1" stop-color="#ffb45e"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="28"/></filter></defs>
-<rect width="1600" height="900" rx="40" fill="url(#bg)"/><circle cx="1230" cy="180" r="250" fill="#ff426b" opacity=".12" filter="url(#g)"/>
-<g font-family="Arial,sans-serif"><text x="95" y="115" fill="#ff8198" font-size="18" font-weight="700">MOBILE GAME • AVAILABLE ON GOOGLE PLAY</text><text x="95" y="185" fill="white" font-size="64" font-weight="800">MBStress: Boss Rush</text><text x="95" y="235" fill="#b6a7b1" font-size="23">Precision. Timing. Survival.</text></g>
-<g transform="translate(130 330)"><rect width="430" height="350" rx="35" fill="#160d16" stroke="#5c2638" stroke-width="3"/><circle cx="215" cy="175" r="120" fill="none" stroke="#ff5c78" stroke-width="8"/><circle cx="215" cy="175" r="72" fill="none" stroke="#ff9d67" stroke-width="6"/><path d="M215 45L250 135L350 145L272 207L300 310L215 250L130 310L158 207L80 145L180 135Z" fill="url(#hot)"/><circle cx="215" cy="175" r="28" fill="#080911"/></g>
-<g transform="translate(650 335)" font-family="Arial,sans-serif">
-<rect width="790" height="92" rx="24" fill="#170e17" stroke="#542536"/><text x="30" y="36" fill="#ff8298" font-size="15" font-weight="700">BOSS RUSH</text><text x="30" y="69" fill="white" font-size="27" font-weight="700">Fast encounters built around reflex and timing</text>
-<rect y="112" width="790" height="92" rx="24" fill="#170e17" stroke="#542536"/><text x="30" y="148" fill="#ff8298" font-size="15" font-weight="700">PROGRESSION</text><text x="30" y="181" fill="white" font-size="27" font-weight="700">Levels, challenges, rewards and player growth</text>
-<rect y="224" width="790" height="92" rx="24" fill="#170e17" stroke="#542536"/><text x="30" y="260" fill="#ff8298" font-size="15" font-weight="700">PUBLISHED PRODUCT</text><text x="30" y="293" fill="white" font-size="27" font-weight="700">A live MBlueGame Android title</text></g>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#080911"/><stop offset=".5" stop-color="#210b18"/><stop offset="1" stop-color="#071525"/></linearGradient>
+<linearGradient id="hot"><stop stop-color="#ff4f70"/><stop offset="1" stop-color="#ffb45e"/></linearGradient>
+</defs>
+<rect width="1600" height="900" rx="40" fill="url(#bg)"/>
+<g font-family="Arial,sans-serif">
+<text x="95" y="115" fill="#ff8198" font-size="18" font-weight="700">PUBLISHED MOBILE GAME</text>
+<text x="95" y="185" fill="white" font-size="64" font-weight="800">MBStress: Boss Rush</text>
+<text x="95" y="235" fill="#b6a7b1" font-size="23">Precision • Timing • Survival</text>
+</g>
+<g transform="translate(170 325)">
+<circle cx="220" cy="220" r="190" fill="#13080f" stroke="#5f2638" stroke-width="6"/>
+<circle cx="220" cy="220" r="125" fill="#1b0b13" stroke="#8a3041" stroke-width="5"/>
+<path d="M220 45L265 160L390 175L292 250L330 385L220 305L110 385L148 250L50 175L175 160Z" fill="url(#hot)"/>
+<circle cx="220" cy="220" r="42" fill="#09090d"/>
+<circle cx="220" cy="220" r="16" fill="#fff"/>
+</g>
+<g transform="translate(700 325)" font-family="Arial,sans-serif">
+<rect width="760" height="95" rx="24" fill="#170e17" stroke="#542536"/>
+<text x="30" y="37" fill="#ff8298" font-size="15" font-weight="700">BOSS RUSH</text>
+<text x="30" y="70" fill="white" font-size="27" font-weight="700">Fast encounters built around reflex and timing</text>
+<rect y="120" width="760" height="95" rx="24" fill="#170e17" stroke="#542536"/>
+<text x="30" y="157" fill="#ff8298" font-size="15" font-weight="700">PROGRESSION</text>
+<text x="30" y="190" fill="white" font-size="27" font-weight="700">Levels, challenges, rewards and player growth</text>
+<rect y="240" width="760" height="95" rx="24" fill="#170e17" stroke="#542536"/>
+<text x="30" y="277" fill="#ff8298" font-size="15" font-weight="700">GOOGLE PLAY</text>
+<text x="30" y="310" fill="white" font-size="27" font-weight="700">A published MBlueGame Android title</text>
+</g>
 </svg>
