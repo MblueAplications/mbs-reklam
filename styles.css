@@ -94,3 +94,20 @@
     z-index:10000;
   }
 }
+
+/* SladyyFit legal navigation: responsive 5-language footer */
+.footer-row{align-items:center;flex-wrap:wrap}
+.footer-copy{flex:0 0 auto}
+.footer-links{display:flex;flex:1 1 480px;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:7px;line-height:1.6}
+.footer-links a{white-space:normal}
+.legal-nav{max-height:calc(100vh - 135px);overflow-y:auto}
+@media(max-width:640px){.footer-links{justify-content:flex-start;flex-basis:100%}.legal-nav{max-height:none;overflow:visible}}
+
+/* Very narrow phones: avoid intrinsic-width overflow from long headings and hero content. */
+@media (max-width: 360px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero > *, .feature-project > * { min-width: 0; }
+  .hero h1 { font-size: 36px; overflow-wrap: anywhere; }
+  .feature-project { grid-template-columns: minmax(0, 1fr); padding: 18px; }
+  .feature-project h2 { font-size: 34px; overflow-wrap: anywhere; }
+}
